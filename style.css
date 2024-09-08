@@ -19,6 +19,10 @@ p {
   color: rgb(85, 85, 85);
 }
 
+h1 {
+  margin-bottom: 4rem; /* Adds space after all <h1> elements */
+  margin-top: 4rem; /* Adds space after all <h1> elements */
+}
 /* TRANSITION */
 
 a,
