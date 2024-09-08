@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Saurabh Bhardwaj</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Saurabh Bhardwaj</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()"> 
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+    <section id="profile">
+      <div class="section__pic-container">
+        <img src="./assets/profile-pic.png" alt="John Doe profile picture" />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Hello, I'm</p>
+        <h1 class="title">Saurabh Bhardwaj</h1>
+        <p class="section__text__p1">Machine Learning & Generative AI Solution Specialist</p>
+        <br>
+        <p class="section__text__p2">I help organizations unlock AI’s full potential to drive innovation, optimize operations, and achieve measurable business results.</p>
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2"
+            onclick="window.open('./assets/resume-example.pdf')"
+          >
+            Download CV
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+            Contact Info
+          </button>
+        </div>
+        <div id="socials-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="My LinkedIn profile"
+            class="icon"
+            onclick="location.href='https://www.linkedin.com/in/saurabhbhardwajofficial/'"
+          />
+          <img
+            src="./assets/github.png"
+            alt="My Github profile"
+            class="icon"
+            onclick="location.href='https://github.com/Bhardwaj-Saurabh'"
+          />
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img
+            src="./assets/about-pic.png"
+            alt="Profile picture"
+            class="about-pic"
+          />
+        </div>
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <img
+                src="./assets/experience.png"
+                alt="Experience icon"
+                class="icon"
+              />
+              <h3>Experience</h3>
+              <p>5+ years <br />ML & AI Specialist</p>
+            </div>
+            <div class="details-container">
+              <img
+                src="./assets/education.png"
+                alt="Education icon"
+                class="icon"
+              />
+              <h3>Education</h3>
+              <p>Master's Degree<br />Applied Artificial Intelligence</p>
+            </div>
+          </div>
+          <div class="text-container">
+            <p>
+              <div class="row">
+                <p class="lead">As a seasoned Machine Learning and AI Specialist, I specialise in delivering comprehensive solutions across Machine Learning (ML), Generative AI, and MLOps, designed to drive transformative results for businesses. With over a decade of hands-on experience, including my current role as a AI Specialist, I have a proven track record of optimizing business processes through data-driven insights, automation, and advanced AI models.</p>
+                <br>
+                <p class="lead">From building end-to-end machine learning pipelines to developing highly accurate predictive models, my expertise spans across cloud platforms like AWS and Azure, RAG based Generative AI Solution, framework like TensorFlow and PyTorch, and modern MLOps tools like Docker, Kubernetes, and Terraform. I am dedicated to helping organizations streamline operations, reduce costs, and unlock new efficiencies through scalable AI solutions.</p>
+                <br>
+                <p class="lead">With a master's degree in Applied AI from Cranfield University, UK, certifications in NLP, Generative AI, MLOps, and cloud-based data science, and a proven track record of reducing costs and enhancing productivity, I am dedicated to building scalable AI solutions that align with your organization’s goals. Let’s collaborate to leverage AI’s full potential and bring cutting-edge innovation to your business.</p>
+            </div>
+            </p>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#experience'"
+      />
+    </section>
+    <section id="skills">
+      <h1 class="title">Skills</h1>
+      <div class="skills-details-container">
+        <div class="skills-column">
+          <h2 class="skills-sub-title">Machine Learning</h2>
+          <div class="skills-list">
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Predictive Modelling</h3>
+                <p>Advanced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>NLP</h3>
+                <p>Advanced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Generative AI</h3>
+                <p>Advanced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>RAG applications</h3>
+                <p>Advanced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>LLM Fine-tuning</h3>
+                <p>Advanced</p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="skills-column">
+          <h2 class="skills-sub-title">MLOps</h2>
+          <div class="skills-list">
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div> 
+                <h3>Git</h3>
+                <p>Advanced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Data Engineering</h3>
+                <p>Advanced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>CI & CD Pipelines</h3>
+                <p>Advanced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Azure ML</h3>
+                <p>Advanced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>AWS Sagemaker</h3>
+                <p>Advanced</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'" />
+    </section>
+    <section id="experience">
+      <h1 class="title">Experience</h1>
+      <div class="experience-container">
+        <!-- Company 1 -->
+        <div class="experience-item" onclick="this.classList.toggle('active')">
+          <div class="experience-header">
+            <div class="experience-left">
+              <img src="./assets/unisys.png" alt="Company 1 Logo" class="company-logo" />
+              <div class="position-info">
+                <h2>ML & AI Specialist</h2>
+                <p>Unisys</p> 
+              </div>
+            </div>
+            <div class="experience-right">
+              <p>2024 - Present</p>
+            </div>
+          </div>
+          <div class="experience-details">
+            <ul>
+              <li>Developed scalable web applications using JavaScript and CSS frameworks.</li>
+              <li>Collaborated with cross-functional teams to design and implement new features.</li>
+            </ul>
+          </div>
+        </div>
+    
+        <!-- Company 2 -->
+        <div class="experience-item" onclick="this.classList.toggle('active')">
+          <div class="experience-header">
+            <div class="experience-left">
+              <img src="./assets/zizo.jpeg" alt="Company 2 Logo" class="company-logo" />
+              <div class="position-info">
+                <h2>Machine Learning Engineer</h2>
+                <p>Zizo Softwares</p>
+              </div>
+            </div>
+            <div class="experience-right">
+              <p>2020 - 2024</p>
+            </div>
+          </div> 
+          <div class="experience-details">
+            <ul>
+              <li>Led the development team for various SaaS applications using modern frameworks.</li>
+              <li>Enhanced system performance by 20% by optimizing key algorithms.</li>
+            </ul>
+          </div> 
+        </div>
+        <div class="experience-item" onclick="this.classList.toggle('active')">
+          <div class="experience-header">
+            <div class="experience-left">
+              <img src="./assets/nissan.jpg" alt="Company 1 Logo" class="company-logo" />
+              <div class="position-info">
+                <h2>Principal Consultant</h2>
+                <p>Nissan</p>
+              </div>
+            </div>
+            <div class="experience-right">
+              <p>2014 - 2024</p>
+            </div>
+          </div>
+          <div class="experience-details">
+            <ul>
+              <li>Developed scalable web applications using JavaScript and CSS frameworks.</li>
+              <li>Collaborated with cross-functional teams to design and implement new features.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="projects">
+      <h1 class="title">Projects</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/project-1.png"
+                alt="Project 1"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Project One</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/project-2.png"
+                alt="Project 2"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Project Two</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/project-3.png"
+                alt="Project 3"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Project Three</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#contact'"
+      />
+    </section>
+    <section id="contact">
+
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="./assets/email.png"
+            alt="Email icon"
+            class="icon contact-icon email-icon" 
+          />
+          <p><a href="mailto:examplemail@gmail.com">aryan.saurabhbhardwaj@gmail.com</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="LinkedIn icon"
+            class="icon contact-icon"
+          />
+          <p><a href="https://www.linkedin.com/in/saurabhbhardwajofficial/">LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li> 
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2024 Saurabh Bhardwaj. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
