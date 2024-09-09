@@ -320,6 +320,11 @@ section {
 
 }
 
+#skills .title{
+  margin-bottom: 2rem;
+}
+
+
 .skills-details-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
