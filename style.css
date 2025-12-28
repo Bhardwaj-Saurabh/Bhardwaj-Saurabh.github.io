@@ -97,7 +97,7 @@ body {
   background: radial-gradient(ellipse at top, #242424 0%, #1a1a1a 50%, #0f0f0f 100%);
   background-attachment: fixed;
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.7;
   transition: background var(--transition-slow), color var(--transition-slow);
   min-height: 100vh;
 }
@@ -125,20 +125,21 @@ a:hover {
   color: var(--purple-primary);
 }
 
-/* Headings - Space Grotesk for AI Tech Feel */
+/* Headings - Clean and Professional */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   color: var(--text-primary);
 }
 
-h1 { font-size: 3rem; line-height: 1.2; }
-h2 { font-size: 2.5rem; line-height: 1.3; }
-h3 { font-size: 2rem; line-height: 1.3; }
-h4 { font-size: 1.5rem; line-height: 1.4; }
+/* Proper Typography Scale - 1.25 Major Third Ratio */
+h1 { font-size: 3.052rem; line-height: 1.2; }
+h2 { font-size: 2.441rem; line-height: 1.3; }
+h3 { font-size: 1.953rem; line-height: 1.4; }
+h4 { font-size: 1.563rem; line-height: 1.4; }
 h5 { font-size: 1.25rem; line-height: 1.5; }
-h6 { font-size: 1.125rem; line-height: 1.5; }
+h6 { font-size: 1rem; line-height: 1.5; }
 
 .hidden {
   display: none !important;
@@ -325,7 +326,7 @@ nav.scrolled {
    ================================ */
 
 section {
-  padding: 4vh 10vw;
+  padding: 6rem 10vw;
   box-sizing: border-box;
   min-height: 60vh;
 }
@@ -337,7 +338,7 @@ section {
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: 2.441rem;
   color: var(--text-primary);
   margin-bottom: 1rem;
   text-align: center;
@@ -354,7 +355,8 @@ section {
   text-align: center;
   color: var(--text-secondary);
   font-size: 1.2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  line-height: 1.8;
 }
 
 /* ================================
@@ -373,14 +375,15 @@ section {
   padding-top: 10vh;
 }
 
-#particles-js {
+/* Particles.js removed for executive-level simplicity */
+/* #particles-js {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 0;
-}
+} */
 
 .profile-content {
   position: relative;
@@ -448,43 +451,26 @@ section {
 }
 
 .hero-title {
-  font-size: 3rem;
+  font-size: 3.052rem;
   margin-bottom: 1rem;
 }
 
-.typing-container {
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
-#typed-text {
-  font-size: 1.5rem;
-  color: var(--primary-color);
+.hero-subtitle {
+  font-size: 1.953rem;
   font-weight: 600;
-}
-
-.typed-cursor {
-  font-size: 1.5rem;
-  color: var(--primary-color);
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  0%, 49% {
-    opacity: 1;
-  }
-  50%, 100% {
-    opacity: 0;
-  }
+  color: var(--purple-light);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
 }
 
 .hero-description {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--text-secondary);
+  line-height: 1.8;
   margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Stats Container */
@@ -636,6 +622,113 @@ section {
   color: var(--text-white);
   transform: translateY(-5px) rotate(10deg);
   box-shadow: var(--shadow-glow);
+}
+
+/* ================================
+   EXECUTIVE IMPACT SECTION
+   ================================ */
+
+.executive-impact {
+  background: var(--bg-secondary);
+  padding: 5rem 10vw;
+}
+
+.impact-header {
+  margin-bottom: 3rem;
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Solid Card - Alternative to glassmorphism for content sections */
+.solid-card {
+  background: var(--bg-primary);
+  border: 1px solid rgba(168, 85, 247, 0.15);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 2rem;
+  transition: all var(--transition-normal);
+}
+
+.solid-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+.impact-card {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.impact-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-md);
+  background: var(--primary-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+.impact-content {
+  flex: 1;
+}
+
+.impact-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.impact-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.impact-description {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.strategic-vision {
+  background: var(--bg-primary);
+  border: 1px solid rgba(168, 85, 247, 0.15);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.vision-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.vision-statement {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: var(--text-secondary);
 }
 
 /* ================================

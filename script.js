@@ -4,8 +4,8 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize all features
-  initParticles();
-  initTypingEffect();
+  // initParticles(); // Removed for executive-level simplicity
+  // initTypingEffect(); // Removed for executive-level simplicity
   initScrollAnimations();
   initDarkModeToggle();
   initSkillFilters();
