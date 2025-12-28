@@ -446,6 +446,7 @@ section {
 
 .section__text__p1 {
   font-size: 1.2rem;
+  font-weight: 500;
   color: var(--text-secondary);
   margin-bottom: 0.5rem;
 }
