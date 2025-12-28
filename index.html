@@ -4,28 +4,60 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
-  <!-- Link to the updated CSS file -->
+
+  <!-- SEO Meta Tags -->
+  <title>Saurabh Bhardwaj | Lead AI Architect & Machine Learning Expert</title>
+  <meta name="description" content="Lead AI Architect with 5+ years experience in ML, Generative AI, and MLOps. Expert in Azure, AWS, LangChain, and PyTorch. 36 AI use cases architected, 3 production deployments.">
+  <meta name="keywords" content="AI Architect, Machine Learning Engineer, Generative AI, MLOps, Azure AI Engineer, AWS SageMaker, LangChain, PyTorch, RAG, Computer Vision">
+  <meta name="author" content="Saurabh Bhardwaj">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bhardwaj-saurabh.github.io/">
+  <meta property="og:title" content="Saurabh Bhardwaj | Lead AI Architect & ML Specialist">
+  <meta property="og:description" content="Expert in ML, GenAI, and MLOps with proven track record of 36 AI use cases and 3 production deployments">
+  <meta property="twitter:card" content="summary_large_image">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mediaqueries.css" />
+
+  <!-- AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
   <!-- Navigation -->
   <nav id="desktop-nav">
-    <div class="logo">Saurabh Bhardwaj</div>
+    <div class="logo"><span class="logo-gradient">Saurabh</span> Bhardwaj</div>
     <div>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
+        <li><a href="#certifications">Certifications</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </li>
       </ul>
     </div>
   </nav>
+
   <nav id="hamburger-nav">
-    <div class="logo">Saurabh Bhardwaj</div>
+    <div class="logo"><span class="logo-gradient">Saurabh</span> Bhardwaj</div>
     <div class="hamburger-menu">
-      <div class="hamburger-icon" onclick="toggleMenu()"> 
+      <div class="hamburger-icon" onclick="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
@@ -34,319 +66,1247 @@
         <li><a href="#about" onclick="toggleMenu()">About</a></li>
         <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
         <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+        <li><a href="#certifications" onclick="toggleMenu()">Certifications</a></li>
         <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
         <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
       </div>
-    </div> 
-  </nav>
-  <!-- Profile Section -->
-  <section id="profile">
-    <div class="section__pic-container">
-      <img src="./assets/IMG_3708.jpg" alt="Profile picture" />
     </div>
-    <div class="section__text">
-      <p class="section__text__p1">Hello, I'm</p>
-      <h1 class="title">Saurabh Bhardwaj</h1>
-      <p class="section__text__p1">Machine Learning & Generative AI Solution Specialist</p>
-      <br>
-      <br> 
-      <p class="section__text__p2">I help organizations unlock AI’s full potential to drive innovation, optimize operations, and achieve measurable business results.</p>
-      <div class="btn-container"> 
-        <button
-          class="btn btn-color-2"
-          onclick="window.open('./assets/resume-example.pdf')"
-        >
-          Download CV
-        </button>
-        <button class="btn btn-color-1" onclick="location.href='#contact'">
-          Contact Info
-        </button>
+  </nav>
+
+  <!-- Profile/Hero Section -->
+  <section id="profile">
+    <div id="particles-js"></div>
+    <div class="profile-content">
+      <div class="section__pic-container" data-aos="fade-right">
+        <div class="profile-pic-wrapper">
+          <img src="./assets/IMG_3708.jpg" alt="Saurabh Bhardwaj - Lead AI Architect" loading="lazy" />
+          <div class="profile-pic-glow"></div>
+        </div>
       </div>
-      <div id="socials-container">
-        <img
-          src="./assets/linkedin.png"
-          alt="My LinkedIn profile"
-          class="icon"
-          onclick="location.href='https://www.linkedin.com/in/saurabhbhardwajofficial/'"
-        />
-        <img
-          src="./assets/github.png"
-          alt="My Github profile"
-          class="icon"
-          onclick="location.href='https://github.com/Bhardwaj-Saurabh'"
-        />
+      <div class="section__text" data-aos="fade-left" data-aos-delay="200">
+        <p class="section__text__p1">Hello, I'm</p>
+        <h1 class="title hero-title">Saurabh Bhardwaj</h1>
+
+        <div class="typing-container">
+          <span id="typed-text"></span>
+          <span class="typed-cursor">|</span>
+        </div>
+
+        <p class="section__text__p2 hero-description">
+          Leading 19-member AI team | 36 AI use cases architected | 3 production deployments
+        </p>
+
+        <div class="stats-container">
+          <div class="stat-card glass-card">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-card glass-card">
+            <div class="stat-number">36</div>
+            <div class="stat-label">AI Use Cases</div>
+          </div>
+          <div class="stat-card glass-card">
+            <div class="stat-number">8</div>
+            <div class="stat-label">Certifications</div>
+          </div>
+        </div>
+
+        <div class="btn-container">
+          <button class="btn btn-primary btn-gradient" onclick="window.open('./assets/Saurabh_Bhardwaj_HR.docx')">
+            <i class="fas fa-download"></i> Download CV
+          </button>
+          <button class="btn btn-secondary btn-glass" onclick="location.href='#contact'">
+            <i class="fas fa-envelope"></i> Get In Touch
+          </button>
+        </div>
+
+        <div id="socials-container">
+          <a href="https://www.linkedin.com/in/saurabhbhardwajofficial/" target="_blank" rel="noopener" class="social-link">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/Bhardwaj-Saurabh" target="_blank" rel="noopener" class="social-link">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="mailto:aryan.saurabhbhardwaj@gmail.com" class="social-link">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
       </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <i class="fas fa-chevron-down"></i>
     </div>
   </section>
+
   <!-- About Section -->
   <section id="about">
-    <h1 class="title">About Me</h1>
+    <h1 class="title section-title" data-aos="fade-up">About Me</h1>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+      Driving AI Innovation Across Industries
+    </p>
+
     <div class="section-container">
-      <div class="section__pic-container">
-        <img
-          src="./assets/IMG_3682.jpg"
-          alt="Profile picture"
-          class="about-pic"
-        />
+      <div class="section__pic-container" data-aos="zoom-in">
+        <div class="about-pic-wrapper glass-card">
+          <img src="./assets/IMG_3682.jpg" alt="Saurabh Bhardwaj" class="about-pic" loading="lazy" />
+        </div>
       </div>
-      <div class="about-details-container">
+
+      <div class="about-details-container" data-aos="fade-left" data-aos-delay="200">
         <div class="about-containers">
-          <div class="details-container">
-            <img
-              src="./assets/experience.png"
-              alt="Experience icon"
-              class="icon"
-            />
+          <div class="details-container glass-card">
+            <i class="fas fa-briefcase icon-gradient"></i>
             <h3>Experience</h3>
-            <p>5+ years <br />ML & AI Specialist</p>
+            <p>5+ years<br />Lead AI Architect</p>
           </div>
-          <div class="details-container">
-            <img
-              src="./assets/education.png"
-              alt="Education icon"
-              class="icon"
-            />
+          <div class="details-container glass-card">
+            <i class="fas fa-graduation-cap icon-gradient"></i>
             <h3>Education</h3>
-            <p>Master's Degree<br />Applied Artificial Intelligence</p>
+            <p>M.Sc. Applied AI<br />Cranfield University</p>
+          </div>
+          <div class="details-container glass-card">
+            <i class="fas fa-award icon-gradient"></i>
+            <h3>Recognition</h3>
+            <p>1st Place<br />Imperial College DS Bootcamp</p>
           </div>
         </div>
+
         <div class="text-container">
           <p class="lead">
-            As a seasoned Machine Learning and AI Specialist, I specialize in delivering comprehensive solutions across Machine Learning (ML), Generative AI, and MLOps, designed to drive transformative results for businesses. With over a decade of hands-on experience, including my current role as an AI Specialist, I have a proven track record of optimizing business processes through data-driven insights, automation, and advanced AI models.
+            As <strong>Lead AI Architect at Delaware UK</strong>, I lead a 19-member AI team across UK, Belgium, and Netherlands, architecting 36 AI use cases with 3 successful production deployments. I built Delaware's Agentic AI Deployment Framework while ensuring GDPR and Ethical AI compliance.
           </p>
-          <br>
           <p class="lead">
-            From building end-to-end machine learning pipelines to developing highly accurate predictive models, my expertise spans across cloud platforms like AWS and Azure, RAG-based Generative AI solutions, frameworks like TensorFlow and PyTorch, and modern MLOps tools like Docker, Kubernetes, and Terraform. I am dedicated to helping organizations streamline operations, reduce costs, and unlock new efficiencies through scalable AI solutions.
+            Previously at <strong>Unisys</strong>, I developed a RAG solution that improved accuracy from 64% to 89% and built a computer vision model reducing documentation errors by 93%. My expertise spans the full AI lifecycle - from MLOps with Terraform, Docker, Kubernetes to deploying solutions on Azure OpenAI and AWS SageMaker.
           </p>
-          <br>
           <p class="lead">
-            With a master's degree in Applied AI from Cranfield University, UK, certifications in NLP, Generative AI, MLOps, and cloud-based data science, and a proven track record of reducing costs and enhancing productivity, I am dedicated to building scalable AI solutions that align with your organization’s goals. Let’s collaborate to leverage AI’s full potential and bring cutting-edge innovation to your business.
+            With a Master's degree in Applied AI from Cranfield University and 8 industry certifications, I transform business challenges into scalable AI solutions that deliver measurable results.
           </p>
         </div>
       </div>
     </div>
-  </section> 
-  <!-- Skills Section -->
-  <section id="skills">
-    <h1 class="title">Skills</h1>
-    <div class="skills-details-container">
-      <div class="skills-column">
-        <h2 class="skills-sub-title">Machine Learning</h2>
-        <div class="skills-list">
-          <article>
-            <img src="./assets/checkmark.png" alt="Checkmark icon" class="icon" />
-            <div>
-              <h3>NLP</h3>
-              <p>Advanced</p>
-            </div>
-          </article>
-
-          <article> 
-            <img src="./assets/checkmark.png" alt="Checkmark icon" class="icon" />
-            <div>
-              <h3>Predictive Modelling</h3>
-              <p>Advanced</p>
-            </div>
-          </article>
- 
-          <article>
-            <img src="./assets/checkmark.png" alt="Checkmark icon" class="icon" />
-            <div>
-              <h3>AWS SageMaker</h3>
-              <p>Advanced</p>
-            </div>
-          </article>
-
-          <article> 
-            <img src="./assets/checkmark.png" alt="Checkmark icon" class="icon" />
-            <div>
-              <h3>Azure Machine Learning</h3>
-              <p>Advanced</p>
-            </div>
-          </article>
-
-          <!-- Add other skills as needed -->
-        </div>
-      </div>
-      <div class="skills-column"> 
-        <h2 class="skills-sub-title">Generative AI</h2> 
-        <div class="skills-list">
-          <article>
-            <img src="./assets/checkmark.png" alt="Checkmark icon" class="icon" />
-            <div> 
-              <h3>RAG Application</h3>
-              <p>Advanced</p>
-            </div>
-          </article>
-          
-          <article>
-            <img src="./assets/checkmark.png" alt="Checkmark icon" class="icon" />
-            <div> 
-              <h3>Q & A Chat Bot</h3>
-              <p>Advanced</p>
-            </div>
-          </article>
-
-          <article>
-            <img src="./assets/checkmark.png" alt="Checkmark icon" class="icon" />
-            <div> 
-              <h3>Fine-tuning</h3>
-              <p>Advanced</p>
-            </div>
-          </article>
-
-          <article>
-            <img src="./assets/checkmark.png" alt="Checkmark icon" class="icon" />
-            <div> 
-              <h3>LLM based Application</h3>
-              <p>Advanced</p>
-            </div>
-          </article>
-          <!-- Add other skills as needed -->
-        </div>
-      </div>
-    </div>
-    
   </section>
+
+  <!-- Skills/Tech Stack Section -->
+  <section id="skills">
+    <h1 class="title section-title" data-aos="fade-up">Tech Stack</h1>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+      Comprehensive AI/ML Engineering Toolkit
+    </p>
+
+    <div class="skills-filters" data-aos="fade-up" data-aos-delay="200">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="programming">Programming</button>
+      <button class="filter-btn" data-filter="ml">ML/AI Frameworks</button>
+      <button class="filter-btn" data-filter="cloud">Cloud & MLOps</button>
+      <button class="filter-btn" data-filter="data">Data Engineering</button>
+    </div>
+
+    <div class="skills-grid" data-aos="fade-up" data-aos-delay="300">
+      <!-- Programming Languages -->
+      <div class="skill-card glass-card" data-category="programming">
+        <div class="skill-icon"><i class="fab fa-python"></i></div>
+        <h3>Python</h3>
+        <div class="skill-bar"><div class="skill-progress" style="--progress: 95%"></div></div>
+        <p>Advanced</p>
+      </div>
+
+      <div class="skill-card glass-card" data-category="programming">
+        <div class="skill-icon"><i class="fas fa-code"></i></div>
+        <h3>C++ / C#</h3>
+        <div class="skill-bar"><div class="skill-progress" style="--progress: 85%"></div></div>
+        <p>Advanced</p>
+      </div>
+
+      <div class="skill-card glass-card" data-category="programming">
+        <div class="skill-icon"><i class="fas fa-database"></i></div>
+        <h3>SQL / NoSQL</h3>
+        <div class="skill-bar"><div class="skill-progress" style="--progress: 90%"></div></div>
+        <p>Advanced</p>
+      </div>
+
+      <div class="skill-card glass-card" data-category="programming">
+        <div class="skill-icon"><i class="fas fa-fire"></i></div>
+        <h3>PySpark</h3>
+        <div class="skill-bar"><div class="skill-progress" style="--progress: 80%"></div></div>
+        <p>Advanced</p>
+      </div>
+
+      <!-- ML/AI Frameworks -->
+      <div class="skill-card glass-card" data-category="ml">
+        <div class="skill-icon"><i class="fas fa-brain"></i></div>
+        <h3>PyTorch</h3>
+        <div class="skill-bar"><div class="skill-progress" style="--progress: 90%"></div></div>
+        <p>Advanced</p>
+      </div>
+
+      <div class="skill-card glass-card" data-category="ml">
+        <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
+        <h3>TensorFlow</h3>
+        <div class="skill-bar"><div class="skill-progress" style="--progress: 88%"></div></div>
+        <p>Advanced</p>
+      </div>
+
+      <div class="skill-card glass-card" data-category="ml">
+        <div class="skill-icon"><i class="fas fa-link"></i></div>
+        <h3>LangChain</h3>
+        <div class="skill-bar"><div class="skill-progress" style="--progress: 92%"></div></div>
+        <p>Expert</p>
+      </div>
+
+      <div class="skill-card glass-card" data-category="ml">
+        <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
+        <h3>LangGraph</h3>
+        <div class="skill-bar"><div class="skill-progress" style="--progress: 90%"></div></div>
+        <p>Advanced</p>
+      </div>
+
+      <div class="skill-card glass-card" data-category="ml">
+        <div class="skill-icon"><i class="fas fa-robot"></i></div>
+        <h3>Llama-Index</h3>
+        <div class="skill-bar"><div class="skill-progress" style="--progress: 85%"></div></div>
+        <p>Advanced</p>
+      </div>
+
+      <div class="skill-card glass-card" data-category="ml">
+        <div class="skill-icon"><i class="fas fa-smile"></i></div>
+        <h3>Hugging Face</h3>
+        <div class="skill-bar"><div class="skill-progress" style="--progress: 87%"></div></div>
+        <p>Advanced</p>
+      </div>
+
+      <div class="skill-card glass-card" data-category="ml">
+        <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Scikit-Learn</h3>
+        <div class="skill-bar"><div class="skill-progress" style="--progress: 93%"></div></div>
+        <p>Expert</p>
+      </div>
+
+      <!-- Cloud & MLOps -->
+      <div class="skill-card glass-card" data-category="cloud">
+        <div class="skill-icon"><i class="fab fa-microsoft"></i></div>
+        <h3>Azure ML</h3>
+        <div class="skill-bar"><div class="skill-progress" style="--progress: 92%"></div></div>
+        <p>Expert</p>
+      </div>
+
+      <div class="skill-card glass-card" data-category="cloud">
+        <div class="skill-icon"><i class="fab fa-aws"></i></div>
+        <h3>AWS SageMaker</h3>
+        <div class="skill-bar"><div class="skill-progress" style="--progress: 88%"></div></div>
+        <p>Advanced</p>
+      </div>
+
+      <div class="skill-card glass-card" data-category="cloud">
+        <div class="skill-icon"><i class="fab fa-docker"></i></div>
+        <h3>Docker</h3>
+        <div class="skill-bar"><div class="skill-progress" style="--progress: 90%"></div></div>
+        <p>Advanced</p>
+      </div>
+
+      <div class="skill-card glass-card" data-category="cloud">
+        <div class="skill-icon"><i class="fas fa-dharmachakra"></i></div>
+        <h3>Kubernetes</h3>
+        <div class="skill-bar"><div class="skill-progress" style="--progress: 85%"></div></div>
+        <p>Advanced</p>
+      </div>
+
+      <div class="skill-card glass-card" data-category="cloud">
+        <div class="skill-icon"><i class="fas fa-code-branch"></i></div>
+        <h3>Terraform</h3>
+        <div class="skill-bar"><div class="skill-progress" style="--progress: 87%"></div></div>
+        <p>Advanced</p>
+      </div>
+
+      <div class="skill-card glass-card" data-category="cloud">
+        <div class="skill-icon"><i class="fas fa-infinity"></i></div>
+        <h3>MLflow</h3>
+        <div class="skill-bar"><div class="skill-progress" style="--progress: 88%"></div></div>
+        <p>Advanced</p>
+      </div>
+
+      <!-- Data Engineering -->
+      <div class="skill-card glass-card" data-category="data">
+        <div class="skill-icon"><i class="fas fa-table"></i></div>
+        <h3>Microsoft Fabric</h3>
+        <div class="skill-bar"><div class="skill-progress" style="--progress: 90%"></div></div>
+        <p>Advanced</p>
+      </div>
+
+      <div class="skill-card glass-card" data-category="data">
+        <div class="skill-icon"><i class="fas fa-chart-bar"></i></div>
+        <h3>Power BI</h3>
+        <div class="skill-bar"><div class="skill-progress" style="--progress: 88%"></div></div>
+        <p>Advanced</p>
+      </div>
+
+      <div class="skill-card glass-card" data-category="data">
+        <div class="skill-icon"><i class="fas fa-chart-area"></i></div>
+        <h3>Tableau</h3>
+        <div class="skill-bar"><div class="skill-progress" style="--progress: 85%"></div></div>
+        <p>Advanced</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Experience Section -->
   <section id="experience">
-    <h1 class="title">Experience</h1>
-    <div class="experience-container">
-      <!-- Company 1 --> 
-      <div class="experience-item" onclick="this.classList.toggle('active')">
-        <div class="experience-header">
+    <h1 class="title section-title" data-aos="fade-up">Professional Journey</h1>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+      Leading AI Transformation Across Global Teams
+    </p>
+
+    <div class="experience-timeline" data-aos="fade-up" data-aos-delay="200">
+      <!-- Delaware - Current Role -->
+      <div class="experience-item glass-card timeline-item" data-aos="fade-right">
+        <div class="experience-header" onclick="this.parentElement.classList.toggle('active')">
+          <div class="experience-left">
+            <img src="./assets/delaware logo.png" alt="Delaware Logo" class="company-logo" />
+            <div class="position-info">
+              <h2>Lead AI Architect</h2>
+              <p class="company-name">Delaware UK</p>
+              <p class="company-location">
+                <i class="fas fa-map-marker-alt"></i> London, UK
+              </p>
+            </div>
+          </div>
+          <div class="experience-right">
+            <span class="date-badge current-badge">Sep 2025 - Present</span>
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </div>
+        </div>
+        <div class="experience-details">
+          <div class="impact-metrics">
+            <div class="metric">
+              <div class="metric-value">19</div>
+              <div class="metric-label">Team Members Led</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">36</div>
+              <div class="metric-label">AI Use Cases</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">3</div>
+              <div class="metric-label">Production Deployments</div>
+            </div>
+          </div>
+          <ul class="achievement-list">
+            <li>
+              <i class="fas fa-check-circle"></i>
+              Led 19-member AI team across UK, Belgium, and Netherlands developing enterprise AI solutions
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              Architected 36 AI use cases with 3 successful production deployments for Fortune 500 clients
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              Built Delaware's Agentic AI Deployment Framework from scratch, now used across the organization
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              Ensured GDPR & Ethical AI compliance for all AI initiatives
+            </li>
+          </ul>
+          <div class="tech-tags">
+            <span class="tech-tag">LangChain</span>
+            <span class="tech-tag">LangGraph</span>
+            <span class="tech-tag">Azure OpenAI</span>
+            <span class="tech-tag">Agentic AI</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unisys -->
+      <div class="experience-item glass-card timeline-item" data-aos="fade-left">
+        <div class="experience-header" onclick="this.parentElement.classList.toggle('active')">
           <div class="experience-left">
             <img src="./assets/unisys.png" alt="Unisys Logo" class="company-logo" />
             <div class="position-info">
-              <h2>ML & AI Specialist</h2>
-              <p>Unisys</p> 
+              <h2>Senior ML & AI Engineer</h2>
+              <p class="company-name">Unisys</p>
+              <p class="company-location">
+                <i class="fas fa-map-marker-alt"></i> Milton Keynes, UK
+              </p>
             </div>
           </div>
           <div class="experience-right">
-            <p>2024 - Present</p>
+            <span class="date-badge">Jul 2024 - Aug 2025</span>
+            <i class="fas fa-chevron-down expand-icon"></i>
           </div>
         </div>
         <div class="experience-details">
-          <ul>
-            <li>Developed scalable AI solutions for enterprise clients.</li>
-            <li>Collaborated with cross-functional teams to implement AI strategies.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="experience-item" onclick="this.classList.toggle('active')">
-        <div class="experience-header">
-          <div class="experience-left">
-            <img src="./assets/zizo.jpeg" alt="Unisys Logo" class="company-logo" />
-            <div class="position-info">
-              <h2>Machine Learning Engineer</h2>
-              <p>Zizo Softwares</p> 
+          <div class="impact-metrics">
+            <div class="metric">
+              <div class="metric-value">89%</div>
+              <div class="metric-label">RAG Accuracy</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">93%</div>
+              <div class="metric-label">Error Reduction</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">+25%</div>
+              <div class="metric-label">Improvement</div>
             </div>
           </div>
-          <div class="experience-right">
-            <p>2020 - 2024</p>
-          </div>
-        </div>
-        <div class="experience-details">
-          <ul>
-            <li>Developed scalable AI solutions for enterprise clients.</li>
-            <li>Collaborated with cross-functional teams to implement AI strategies.</li>
+          <ul class="achievement-list">
+            <li>
+              <i class="fas fa-check-circle"></i>
+              Developed RAG solution improving accuracy from 64% to 89% using agentic self-correction approach
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              Built computer vision model reducing documentation errors by 93% at scale
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              Implemented CI/CD pipelines with Terraform for automated model deployment
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              Deployed solutions on Azure OpenAI and Azure AI Search infrastructure
+            </li>
           </ul>
-        </div>
-      </div>
-      <div class="experience-item" onclick="this.classList.toggle('active')">
-        <div class="experience-header">
-          <div class="experience-left">
-            <img src="./assets/nissan.jpg" alt="Unisys Logo" class="company-logo" />
-            <div class="position-info">
-              <h2>Principal Consultant</h2>
-              <p>Nissan Technical Centre Europe</p> 
-            </div>
+          <div class="tech-tags">
+            <span class="tech-tag">RAG</span>
+            <span class="tech-tag">Computer Vision</span>
+            <span class="tech-tag">Terraform</span>
+            <span class="tech-tag">Azure AI</span>
           </div>
-          <div class="experience-right">
-            <p>2014 - 2024</p>
-          </div>
-        </div>
-        <div class="experience-details">
-          <ul>
-            <li>Developed scalable AI solutions for enterprise clients.</li>
-            <li>Collaborated with cross-functional teams to implement AI strategies.</li>
-          </ul>
         </div>
       </div>
 
-      <!-- Add other experience items as needed -->
+      <!-- Nissan -->
+      <div class="experience-item glass-card timeline-item" data-aos="fade-right">
+        <div class="experience-header" onclick="this.parentElement.classList.toggle('active')">
+          <div class="experience-left">
+            <img src="./assets/nissan.jpg" alt="Nissan Logo" class="company-logo" />
+            <div class="position-info">
+              <h2>Principal Consultant</h2>
+              <p class="company-name">Nissan Technical Centre Europe</p>
+              <p class="company-location">
+                <i class="fas fa-map-marker-alt"></i> Cranfield, UK
+              </p>
+            </div>
+          </div>
+          <div class="experience-right">
+            <span class="date-badge">Feb 2018 - Jun 2024</span>
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </div>
+        </div>
+        <div class="experience-details">
+          <ul class="achievement-list">
+            <li>
+              <i class="fas fa-check-circle"></i>
+              Developed end-to-end Accessories Price Prediction Model achieving 92% accuracy
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              Reduced sourcing time from 12 to 7 weeks using ML-powered price predictions
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              Built automated quality monitoring system achieving 70% time savings
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              Received Certificate of Appreciation for delivering Qashqai with minimal design quality concerns
+            </li>
+          </ul>
+          <div class="tech-tags">
+            <span class="tech-tag">Machine Learning</span>
+            <span class="tech-tag">Azure Data Warehouse</span>
+            <span class="tech-tag">Power BI</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
+
+  <!-- Certifications & Awards Section -->
+  <section id="certifications">
+    <h1 class="title section-title" data-aos="fade-up">Certifications & Awards</h1>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+      Industry-Recognized Expertise in AI/ML
+    </p>
+
+    <div class="certifications-grid" data-aos="fade-up" data-aos-delay="200">
+      <!-- Microsoft Azure Certifications -->
+      <div class="cert-card glass-card" data-aos="zoom-in" data-aos-delay="100">
+        <div class="cert-badge azure-badge">
+          <i class="fab fa-microsoft"></i>
+        </div>
+        <h3>Azure AI Engineer Associate</h3>
+        <p class="cert-id">AI-102</p>
+        <p class="cert-issuer">Microsoft</p>
+        <div class="cert-skills">
+          <span>Azure OpenAI</span>
+          <span>Cognitive Services</span>
+          <span>AI Solutions</span>
+        </div>
+      </div>
+
+      <div class="cert-card glass-card" data-aos="zoom-in" data-aos-delay="150">
+        <div class="cert-badge azure-badge">
+          <i class="fab fa-microsoft"></i>
+        </div>
+        <h3>Azure Fabric Analytics Engineer</h3>
+        <p class="cert-id">DP-600</p>
+        <p class="cert-issuer">Microsoft</p>
+        <div class="cert-skills">
+          <span>Data Engineering</span>
+          <span>Fabric</span>
+          <span>Analytics</span>
+        </div>
+      </div>
+
+      <div class="cert-card glass-card" data-aos="zoom-in" data-aos-delay="200">
+        <div class="cert-badge azure-badge">
+          <i class="fab fa-microsoft"></i>
+        </div>
+        <h3>Azure Data Scientist Associate</h3>
+        <p class="cert-id">DP-100</p>
+        <p class="cert-issuer">Microsoft</p>
+        <div class="cert-skills">
+          <span>Azure ML</span>
+          <span>MLOps</span>
+          <span>Model Training</span>
+        </div>
+      </div>
+
+      <!-- Udacity Nanodegrees -->
+      <div class="cert-card glass-card" data-aos="zoom-in" data-aos-delay="250">
+        <div class="cert-badge udacity-badge">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <h3>Agents with LangChain & LangGraph</h3>
+        <p class="cert-id">Nanodegree</p>
+        <p class="cert-issuer">Udacity</p>
+        <div class="cert-skills">
+          <span>LangChain</span>
+          <span>LangGraph</span>
+          <span>AI Agents</span>
+        </div>
+      </div>
+
+      <div class="cert-card glass-card" data-aos="zoom-in" data-aos-delay="300">
+        <div class="cert-badge udacity-badge">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <h3>Agentic AI Nanodegree</h3>
+        <p class="cert-id">Nanodegree</p>
+        <p class="cert-issuer">Udacity</p>
+        <div class="cert-skills">
+          <span>Autonomous Agents</span>
+          <span>Multi-Agent Systems</span>
+        </div>
+      </div>
+
+      <div class="cert-card glass-card" data-aos="zoom-in" data-aos-delay="350">
+        <div class="cert-badge udacity-badge">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <h3>Generative AI Nanodegree</h3>
+        <p class="cert-id">Nanodegree</p>
+        <p class="cert-issuer">Udacity</p>
+        <div class="cert-skills">
+          <span>LLMs</span>
+          <span>GenAI</span>
+          <span>Prompt Engineering</span>
+        </div>
+      </div>
+
+      <div class="cert-card glass-card" data-aos="zoom-in" data-aos-delay="400">
+        <div class="cert-badge udacity-badge">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <h3>ML DevOps Engineer</h3>
+        <p class="cert-id">Nanodegree</p>
+        <p class="cert-issuer">Udacity</p>
+        <div class="cert-skills">
+          <span>CI/CD</span>
+          <span>MLOps</span>
+          <span>Model Deployment</span>
+        </div>
+      </div>
+
+      <div class="cert-card glass-card" data-aos="zoom-in" data-aos-delay="450">
+        <div class="cert-badge aicore-badge">
+          <i class="fas fa-code"></i>
+        </div>
+        <h3>Azure DevOps Expert</h3>
+        <p class="cert-id">Advanced</p>
+        <p class="cert-issuer">AI Core</p>
+        <div class="cert-skills">
+          <span>Azure DevOps</span>
+          <span>Pipelines</span>
+          <span>Automation</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Awards Section -->
+    <div class="awards-section" data-aos="fade-up" data-aos-delay="500">
+      <h2 class="awards-title">Awards & Recognition</h2>
+      <div class="awards-grid">
+        <div class="award-item glass-card">
+          <i class="fas fa-trophy award-icon"></i>
+          <h4>1st Place</h4>
+          <p>Imperial College Data Science Bootcamp (among 350 participants)</p>
+        </div>
+        <div class="award-item glass-card">
+          <i class="fas fa-microphone award-icon"></i>
+          <h4>1st Place Public Speaking</h4>
+          <p>Toastmasters District Competition</p>
+        </div>
+        <div class="award-item glass-card">
+          <i class="fas fa-star award-icon"></i>
+          <h4>Lead ML Engineer Recognition</h4>
+          <p>Omdena - Helping charities using AI</p>
+        </div>
+        <div class="award-item glass-card">
+          <i class="fas fa-certificate award-icon"></i>
+          <h4>Certificate of Appreciation</h4>
+          <p>Nissan Technical Centre Europe</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Projects Section -->
   <section id="projects">
-    <h1 class="title">Projects</h1>
-    <div class="experience-details-container">
-      <!-- Project 1 -->
-      <div class="details-container color-container">
-        <div class="article-container">
-          <img
-            src="./assets/project-1.png"
-            alt="Project 1"
-            class="project-img"
-          />
+    <h1 class="title section-title" data-aos="fade-up">Featured Projects</h1>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+      Real-World AI Solutions with Measurable Impact
+    </p>
+
+    <div class="project-filters" data-aos="fade-up" data-aos-delay="200">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="genai">Generative AI</button>
+      <button class="filter-btn" data-filter="ml">Machine Learning</button>
+      <button class="filter-btn" data-filter="cv">Computer Vision</button>
+    </div>
+
+    <div class="projects-grid" data-aos="fade-up" data-aos-delay="300">
+      <!-- Project 1: RAG Solution -->
+      <div class="project-card glass-card" data-category="genai" data-aos="flip-left">
+        <div class="project-image-wrapper">
+          <img src="./assets/proj_1.png" alt="RAG-based Document Intelligence System" class="project-img" loading="lazy" />
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="https://github.com/Bhardwaj-Saurabh" target="_blank" rel="noopener" class="project-link-btn">
+                <i class="fab fa-github"></i> Code
+              </a>
+              <a href="#contact" class="project-link-btn">
+                <i class="fas fa-external-link-alt"></i> Demo
+              </a>
+            </div>
+          </div>
         </div>
-        <h2 class="experience-sub-title project-title">Project One</h2>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2 project-btn"
-            onclick="location.href='https://github.com/'"
-          >
-            Github
-          </button>
-          <button
-            class="btn btn-color-2 project-btn"
-            onclick="location.href='https://github.com/'"
-          >
-            Live Demo
-          </button>
+        <div class="project-content">
+          <div class="project-category-badge genai">Generative AI</div>
+          <h3 class="project-title">RAG-based Document Intelligence</h3>
+          <p class="project-description">
+            Enterprise RAG solution leveraging Azure OpenAI and Azure AI Search to improve document retrieval accuracy from 64% to 89%, enabling faster decision-making for business stakeholders.
+          </p>
+
+          <div class="project-metrics">
+            <div class="metric-item">
+              <div class="metric-value">+25%</div>
+              <div class="metric-label">Accuracy Boost</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">89%</div>
+              <div class="metric-label">Final Accuracy</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">40%</div>
+              <div class="metric-label">Time Saved</div>
+            </div>
+          </div>
+
+          <div class="project-tech-stack">
+            <span class="tech-badge">Azure OpenAI</span>
+            <span class="tech-badge">LangChain</span>
+            <span class="tech-badge">Azure AI Search</span>
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">FastAPI</span>
+          </div>
+
+          <div class="project-features">
+            <h4>Key Features:</h4>
+            <ul>
+              <li><i class="fas fa-check"></i> Multi-document semantic search</li>
+              <li><i class="fas fa-check"></i> Context-aware answer generation</li>
+              <li><i class="fas fa-check"></i> Real-time query optimization</li>
+            </ul>
+          </div>
         </div>
       </div>
-      
-      <!-- Add other projects as needed -->
+
+      <!-- Project 2: Computer Vision -->
+      <div class="project-card glass-card" data-category="cv" data-aos="flip-left" data-aos-delay="100">
+        <div class="project-image-wrapper">
+          <img src="./assets/proj_2.png" alt="Computer Vision Quality Control System" class="project-img" loading="lazy" />
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="https://github.com/Bhardwaj-Saurabh" target="_blank" rel="noopener" class="project-link-btn">
+                <i class="fab fa-github"></i> Code
+              </a>
+              <a href="#contact" class="project-link-btn">
+                <i class="fas fa-external-link-alt"></i> Demo
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-category-badge cv">Computer Vision</div>
+          <h3 class="project-title">Automated Quality Control System</h3>
+          <p class="project-description">
+            Deep learning computer vision model using PyTorch and Azure ML to automate document verification, reducing manual documentation errors by 93% and saving 500+ hours monthly.
+          </p>
+
+          <div class="project-metrics">
+            <div class="metric-item">
+              <div class="metric-value">93%</div>
+              <div class="metric-label">Error Reduction</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">500+</div>
+              <div class="metric-label">Hours Saved/Mo</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">95%</div>
+              <div class="metric-label">Accuracy</div>
+            </div>
+          </div>
+
+          <div class="project-tech-stack">
+            <span class="tech-badge">PyTorch</span>
+            <span class="tech-badge">Azure ML</span>
+            <span class="tech-badge">OpenCV</span>
+            <span class="tech-badge">Docker</span>
+            <span class="tech-badge">MLflow</span>
+          </div>
+
+          <div class="project-features">
+            <h4>Key Features:</h4>
+            <ul>
+              <li><i class="fas fa-check"></i> Real-time image classification</li>
+              <li><i class="fas fa-check"></i> Automated anomaly detection</li>
+              <li><i class="fas fa-check"></i> CI/CD deployment pipeline</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Sensor Fault Detection -->
+      <div class="project-card glass-card" data-category="ml" data-aos="flip-left" data-aos-delay="200">
+        <div class="project-image-wrapper">
+          <img src="./assets/proj_3.png" alt="Industrial IoT Predictive Maintenance" class="project-img" loading="lazy" />
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="https://github.com/Bhardwaj-Saurabh" target="_blank" rel="noopener" class="project-link-btn">
+                <i class="fab fa-github"></i> Code
+              </a>
+              <a href="#contact" class="project-link-btn">
+                <i class="fas fa-external-link-alt"></i> Demo
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-category-badge ml">Machine Learning</div>
+          <h3 class="project-title">Sensor Fault Detection (Scania)</h3>
+          <p class="project-description">
+            End-to-end ML pipeline for industrial IoT sensor fault detection, predicting equipment failures before they occur, reducing downtime by 60% and maintenance costs by 35%.
+          </p>
+
+          <div class="project-metrics">
+            <div class="metric-item">
+              <div class="metric-value">60%</div>
+              <div class="metric-label">Downtime ↓</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">35%</div>
+              <div class="metric-label">Cost Savings</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">92%</div>
+              <div class="metric-label">Precision</div>
+            </div>
+          </div>
+
+          <div class="project-tech-stack">
+            <span class="tech-badge">Scikit-Learn</span>
+            <span class="tech-badge">AWS SageMaker</span>
+            <span class="tech-badge">PySpark</span>
+            <span class="tech-badge">Kubernetes</span>
+            <span class="tech-badge">Terraform</span>
+          </div>
+
+          <div class="project-features">
+            <h4>Key Features:</h4>
+            <ul>
+              <li><i class="fas fa-check"></i> Real-time anomaly detection</li>
+              <li><i class="fas fa-check"></i> Predictive maintenance alerts</li>
+              <li><i class="fas fa-check"></i> Scalable distributed processing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: AI Research Trends RAG -->
+      <div class="project-card glass-card" data-category="genai" data-aos="flip-left" data-aos-delay="300">
+        <div class="project-image-wrapper">
+          <img src="./assets/proj_2.png" alt="AI Research Trends RAG Platform" class="project-img" loading="lazy" />
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="https://github.com/Bhardwaj-Saurabh/ai-research-trends-rag" target="_blank" rel="noopener" class="project-link-btn">
+                <i class="fab fa-github"></i> Code
+              </a>
+              <a href="#contact" class="project-link-btn">
+                <i class="fas fa-external-link-alt"></i> Demo
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-category-badge genai">Generative AI</div>
+          <h3 class="project-title">AI Research Trends RAG</h3>
+          <p class="project-description">
+            Production-grade platform for discovering AI research trends using RAG. Ingests papers from arXiv and Semantic Scholar to identify emerging trends and answer queries with citation-backed insights.
+          </p>
+
+          <div class="project-metrics">
+            <div class="metric-item">
+              <div class="metric-value">GPT-4</div>
+              <div class="metric-label">Powered</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">2</div>
+              <div class="metric-label">Data Sources</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">100%</div>
+              <div class="metric-label">Citation-Backed</div>
+            </div>
+          </div>
+
+          <div class="project-tech-stack">
+            <span class="tech-badge">OpenAI GPT-4</span>
+            <span class="tech-badge">FastAPI</span>
+            <span class="tech-badge">Qdrant</span>
+            <span class="tech-badge">Streamlit</span>
+            <span class="tech-badge">Docker</span>
+          </div>
+
+          <div class="project-features">
+            <h4>Key Features:</h4>
+            <ul>
+              <li><i class="fas fa-check"></i> Natural language research search</li>
+              <li><i class="fas fa-check"></i> Semantic vector embeddings</li>
+              <li><i class="fas fa-check"></i> BibTeX/Markdown export</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5: ConformAI -->
+      <div class="project-card glass-card" data-category="genai" data-aos="flip-left" data-aos-delay="400">
+        <div class="project-image-wrapper">
+          <img src="./assets/proj_3.png" alt="ConformAI EU Regulations System" class="project-img" loading="lazy" />
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="https://github.com/Bhardwaj-Saurabh/ConformAI" target="_blank" rel="noopener" class="project-link-btn">
+                <i class="fab fa-github"></i> Code
+              </a>
+              <a href="#contact" class="project-link-btn">
+                <i class="fas fa-external-link-alt"></i> Demo
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-category-badge genai">Generative AI</div>
+          <h3 class="project-title">ConformAI - EU AI Regulations</h3>
+          <p class="project-description">
+            Production RAG system providing real-time answers on EU AI regulations including AI Act, GDPR, and EDPB guidelines. Features LangGraph orchestration with multi-turn conversations.
+          </p>
+
+          <div class="project-metrics">
+            <div class="metric-item">
+              <div class="metric-value">3</div>
+              <div class="metric-label">Legal Sources</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">Real-time</div>
+              <div class="metric-label">Updates</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">100%</div>
+              <div class="metric-label">Citation Accuracy</div>
+            </div>
+          </div>
+
+          <div class="project-tech-stack">
+            <span class="tech-badge">LangGraph</span>
+            <span class="tech-badge">Qdrant</span>
+            <span class="tech-badge">Airflow</span>
+            <span class="tech-badge">PostgreSQL</span>
+            <span class="tech-badge">Kubernetes</span>
+          </div>
+
+          <div class="project-features">
+            <h4>Key Features:</h4>
+            <ul>
+              <li><i class="fas fa-check"></i> Hybrid semantic + BM25 search</li>
+              <li><i class="fas fa-check"></i> Multi-turn conversation support</li>
+              <li><i class="fas fa-check"></i> Automated data ingestion pipeline</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6: OmniSupply Multi-Agent -->
+      <div class="project-card glass-card" data-category="genai" data-aos="flip-left" data-aos-delay="500">
+        <div class="project-image-wrapper">
+          <img src="./assets/proj_1.png" alt="OmniSupply Multi-Agent Platform" class="project-img" loading="lazy" />
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="https://github.com/Bhardwaj-Saurabh/OmniSupply-AI-Multi-Agent-Supply-Chain-Intelligence-Platform" target="_blank" rel="noopener" class="project-link-btn">
+                <i class="fab fa-github"></i> Code
+              </a>
+              <a href="#contact" class="project-link-btn">
+                <i class="fas fa-external-link-alt"></i> Demo
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-category-badge genai">Generative AI</div>
+          <h3 class="project-title">OmniSupply Multi-Agent Platform</h3>
+          <p class="project-description">
+            Enterprise AI system generating supply chain insights and risk predictions using multi-agent orchestration. Processes 416K+ records with 5 specialized agents for comprehensive analytics.
+          </p>
+
+          <div class="project-metrics">
+            <div class="metric-item">
+              <div class="metric-value">5</div>
+              <div class="metric-label">AI Agents</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">416K+</div>
+              <div class="metric-label">Records</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">90-Day</div>
+              <div class="metric-label">Forecasts</div>
+            </div>
+          </div>
+
+          <div class="project-tech-stack">
+            <span class="tech-badge">LangGraph</span>
+            <span class="tech-badge">OpenAI GPT-4o</span>
+            <span class="tech-badge">ChromaDB</span>
+            <span class="tech-badge">PostgreSQL</span>
+            <span class="tech-badge">Prophet</span>
+          </div>
+
+          <div class="project-features">
+            <h4>Key Features:</h4>
+            <ul>
+              <li><i class="fas fa-check"></i> Multi-agent orchestration</li>
+              <li><i class="fas fa-check"></i> Proactive risk alerts</li>
+              <li><i class="fas fa-check"></i> Automated P&L reporting</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GitHub CTA -->
+    <div class="github-cta" data-aos="fade-up" data-aos-delay="400">
+      <p>Explore more projects on my GitHub</p>
+      <a href="https://github.com/Bhardwaj-Saurabh" target="_blank" rel="noopener" class="btn btn-gradient">
+        <i class="fab fa-github"></i> View All Projects
+      </a>
     </div>
   </section>
+
   <!-- Contact Section -->
   <section id="contact">
-    <h1 class="title">Contact Me</h1>
-    <div class="contact-info-upper-container">
-      <div class="contact-info-container">
-        <img
-          src="./assets/email.png"
-          alt="Email icon"
-          class="icon contact-icon email-icon" 
-        />
-        <p><a href="mailto:aryan.saurabhbhardwaj@gmail.com">aryan.saurabhbhardwaj@gmail.com</a></p>
+    <h1 class="title section-title" data-aos="fade-up">Let's Build Something Amazing</h1>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+      Available for AI consulting, speaking engagements, and collaboration opportunities
+    </p>
+
+    <div class="contact-container">
+      <!-- Contact Form -->
+      <div class="contact-form-wrapper glass-card" data-aos="fade-right" data-aos-delay="200">
+        <h2>Send a Message</h2>
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <label for="name">
+              <i class="fas fa-user"></i> Full Name
+            </label>
+            <input type="text" id="name" name="name" required placeholder="John Doe">
+            <span class="error-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">
+              <i class="fas fa-envelope"></i> Email Address
+            </label>
+            <input type="email" id="email" name="email" required placeholder="john@company.com">
+            <span class="error-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="company">
+              <i class="fas fa-building"></i> Company (Optional)
+            </label>
+            <input type="text" id="company" name="company" placeholder="Your Company">
+          </div>
+
+          <div class="form-group">
+            <label for="subject">
+              <i class="fas fa-tag"></i> Subject
+            </label>
+            <select id="subject" name="subject" required>
+              <option value="">Select a subject...</option>
+              <option value="consulting">AI Consulting</option>
+              <option value="collaboration">Project Collaboration</option>
+              <option value="speaking">Speaking Engagement</option>
+              <option value="hiring">Job Opportunity</option>
+              <option value="other">Other</option>
+            </select>
+            <span class="error-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="message">
+              <i class="fas fa-comment"></i> Message
+            </label>
+            <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project or inquiry..."></textarea>
+            <span class="error-message"></span>
+          </div>
+
+          <button type="submit" class="btn btn-gradient submit-btn">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+
+        <div id="form-success-message" class="success-message hidden">
+          <i class="fas fa-check-circle"></i>
+          <p>Thank you! Your message has been sent successfully.</p>
+        </div>
       </div>
-      <div class="contact-info-container">
-        <img
-          src="./assets/linkedin.png"
-          alt="LinkedIn icon"
-          class="icon contact-icon"
-        />
-        <p><a href="https://www.linkedin.com/in/saurabhbhardwajofficial/">LinkedIn</a></p>
+
+      <!-- Contact Information -->
+      <div class="contact-info-wrapper" data-aos="fade-left" data-aos-delay="300">
+        <div class="contact-info-card glass-card">
+          <h2>Get In Touch</h2>
+          <p class="contact-intro">
+            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+          </p>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Email</h4>
+                <a href="mailto:aryan.saurabhbhardwaj@gmail.com">aryan.saurabhbhardwaj@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fab fa-linkedin"></i>
+              </div>
+              <div class="contact-text">
+                <h4>LinkedIn</h4>
+                <a href="https://www.linkedin.com/in/saurabhbhardwajofficial/" target="_blank" rel="noopener">@saurabhbhardwajofficial</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fab fa-github"></i>
+              </div>
+              <div class="contact-text">
+                <h4>GitHub</h4>
+                <a href="https://github.com/Bhardwaj-Saurabh" target="_blank" rel="noopener">@Bhardwaj-Saurabh</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Location</h4>
+                <p>London, United Kingdom</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-links-large">
+            <a href="https://www.linkedin.com/in/saurabhbhardwajofficial/" target="_blank" rel="noopener" class="social-btn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/Bhardwaj-Saurabh" target="_blank" rel="noopener" class="social-btn">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:aryan.saurabhbhardwaj@gmail.com" class="social-btn">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+
+          <div class="availability-status">
+            <div class="status-indicator available"></div>
+            <span>Available for new opportunities</span>
+          </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="quick-stats glass-card">
+          <h3>Why Work With Me?</h3>
+          <ul class="stats-list">
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <span>5+ years of AI/ML expertise</span>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <span>36 AI use cases architected</span>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <span>3 production deployments</span>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <span>8 industry certifications</span>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <span>GDPR & Ethical AI compliant</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
+
   <!-- Footer -->
   <footer>
-    <nav>
-      <div class="nav-links-container"> 
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li> 
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul> 
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3 class="logo">
+          <span class="logo-gradient">Saurabh</span> Bhardwaj
+        </h3>
+        <p class="footer-tagline">Lead AI Architect | ML Specialist | AI Innovation Leader</p>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/in/saurabhbhardwajofficial/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/Bhardwaj-Saurabh" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="mailto:aryan.saurabhbhardwaj@gmail.com" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
       </div>
-    </nav> 
-    <p>Copyright &#169; 2024 Saurabh Bhardwaj. All Rights Reserved.</p>
+
+      <nav class="footer-nav">
+        <div class="footer-column">
+          <h4>Navigation</h4>
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Portfolio</h4>
+          <ul class="nav-links">
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul class="nav-links">
+            <li><a href="./assets/Saurabh_Bhardwaj_HR.docx" download>Download CV</a></li>
+            <li><a href="https://github.com/Bhardwaj-Saurabh" target="_blank" rel="noopener">GitHub Projects</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Saurabh Bhardwaj. All Rights Reserved.</p>
+      <p class="built-with">Built with passion using HTML, CSS & JavaScript</p>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
   </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="script.js"></script>
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Saurabh Bhardwaj",
+    "jobTitle": "Lead AI Architect",
+    "url": "https://bhardwaj-saurabh.github.io/",
+    "image": "https://bhardwaj-saurabh.github.io/assets/IMG_3708.jpg",
+    "sameAs": [
+      "https://www.linkedin.com/in/saurabhbhardwajofficial/",
+      "https://github.com/Bhardwaj-Saurabh"
+    ],
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Cranfield University"
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Delaware UK"
+    },
+    "email": "aryan.saurabhbhardwaj@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "London",
+      "addressCountry": "UK"
+    },
+    "knowsAbout": [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Generative AI",
+      "MLOps",
+      "Azure AI",
+      "AWS SageMaker",
+      "LangChain",
+      "PyTorch"
+    ]
+  }
+  </script>
 </body>
 </html>
