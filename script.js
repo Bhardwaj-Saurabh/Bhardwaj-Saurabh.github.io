@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initBackToTop();
   initNavbarScroll();
   initScrollIndicator();
+  initChatbot();
 });
 
 /* ================================
@@ -570,3 +571,328 @@ document.querySelectorAll('.project-card').forEach(card => {
 console.log('%c🚀 Portfolio by Saurabh Bhardwaj', 'color: #667eea; font-size: 20px; font-weight: bold;');
 console.log('%cLead AI Architect | ML Specialist | AI Innovation Leader', 'color: #764ba2; font-size: 14px;');
 console.log('%cWebsite built with passion using HTML, CSS & JavaScript', 'color: #4a4a6a; font-size: 12px;');
+
+/* ================================
+   CHATBOT FUNCTIONALITY
+   ================================ */
+
+function initChatbot() {
+  const chatbotToggle = document.getElementById('chatbot-toggle');
+  const chatbotClose = document.getElementById('chatbot-close');
+  const chatbotWindow = document.getElementById('chatbot-window');
+  const chatbotInput = document.getElementById('chatbot-input');
+  const chatbotSend = document.getElementById('chatbot-send');
+  const chatbotMessages = document.getElementById('chatbot-messages');
+
+  if (!chatbotToggle || !chatbotWindow) return;
+
+  // Knowledge base - Portfolio information
+  const knowledgeBase = {
+    skills: {
+      keywords: ['skill', 'technology', 'tech', 'expertise', 'tools', 'framework', 'language', 'programming'],
+      response: `Saurabh is an expert in:
+
+**AI/ML Technologies:**
+• LangChain & LangGraph (Expert level)
+• PyTorch & TensorFlow (Advanced)
+• Agentic AI & Multi-Agent Systems
+• RAG (Retrieval Augmented Generation)
+• Azure OpenAI & AWS SageMaker
+
+**Cloud & MLOps:**
+• Azure ML & AWS (Expert level)
+• Docker, Kubernetes, Terraform
+• MLflow, CI/CD pipelines
+
+**Programming:**
+• Python (Advanced)
+• SQL/NoSQL, PySpark
+• C++/C#
+
+He has 9+ years of AI/ML experience and 8 industry certifications including Azure AI Engineer and multiple Udacity Nanodegrees.`
+    },
+    projects: {
+      keywords: ['project', 'work', 'portfolio', 'built', 'developed', 'created'],
+      response: `Here are Saurabh's featured projects:
+
+**1. AI Research Trends RAG**
+• Production-grade platform discovering AI research trends
+• Uses GPT-4 with RAG for citation-backed insights
+• Tech: OpenAI GPT-4, FastAPI, Qdrant, Streamlit
+
+**2. ConformAI - EU AI Regulations**
+• RAG system for EU AI regulations (AI Act, GDPR)
+• LangGraph orchestration with multi-turn conversations
+• Tech: LangGraph, Qdrant, Airflow, Kubernetes
+
+**3. OmniSupply Multi-Agent Platform**
+• Supply chain intelligence with 5 specialized AI agents
+• Processes 416K+ records for analytics & predictions
+• Tech: LangGraph, GPT-4o, ChromaDB, PostgreSQL
+
+View all projects on his [GitHub](https://github.com/Bhardwaj-Saurabh)!`
+    },
+    experience: {
+      keywords: ['experience', 'work history', 'job', 'career', 'company', 'position'],
+      response: `**Current Role:**
+Lead AI Architect at Delaware UK (Sep 2025 - Present)
+• Leading 19-member AI team across UK, Belgium, Netherlands
+• Delivered 36 AI solutions generating $1M+ annual value
+• Built Agentic AI Deployment Framework
+• 3 production systems serving 10,000+ users daily
+
+**Previous Roles:**
+• Principal AI Engineer at Unisys (Jul 2024 - Aug 2025)
+  - Delivered RAG system reducing legal review time by 60%
+  - Automated quality control saving 500+ hours monthly
+
+• Principal Consultant at Nissan (Feb 2018 - Jun 2024)
+  - ML price prediction model with 92% accuracy
+  - Reduced sourcing time from 12 to 7 weeks
+
+Total: 19+ years experience, 9+ years in AI/ML`
+    },
+    contact: {
+      keywords: ['contact', 'email', 'reach', 'connect', 'linkedin', 'github'],
+      response: `You can reach Saurabh through:
+
+📧 **Email:** aryan.saurabhbhardwaj@gmail.com
+
+💼 **LinkedIn:** [saurabhbhardwajofficial](https://www.linkedin.com/in/saurabhbhardwajofficial/)
+
+💻 **GitHub:** [Bhardwaj-Saurabh](https://github.com/Bhardwaj-Saurabh)
+
+📍 **Location:** London, United Kingdom
+
+He's currently available for AI consulting, speaking engagements, and collaboration opportunities!`
+    },
+    impact: {
+      keywords: ['impact', 'achievement', 'result', 'outcome', 'success', 'delivered'],
+      response: `**Executive Impact Highlights:**
+
+💰 **$2M+ Cost Reduction**
+• 60% reduction in legal document review time
+• 500+ hours saved monthly in quality control
+• 60% cut in equipment downtime
+
+👥 **Team Leadership**
+• Built and lead 19-member AI team from scratch
+• Across UK, Belgium, and Netherlands
+
+🚀 **Production Systems**
+• 3 mission-critical AI systems deployed
+• 10,000+ users daily with 99.9% uptime
+
+📊 **AI Strategy**
+• 36 AI use cases architected
+• GDPR compliant & ethical AI practices`
+    },
+    certifications: {
+      keywords: ['certification', 'certified', 'credential', 'award', 'recognition'],
+      response: `**Microsoft Azure Certifications:**
+• Azure AI Engineer Associate (AI-102)
+• Azure Fabric Analytics Engineer (DP-600)
+• Azure Data Scientist Associate (DP-100)
+
+**Udacity Nanodegrees:**
+• Agents with LangChain & LangGraph
+• Agentic AI Nanodegree
+• Generative AI Nanodegree
+• ML DevOps Engineer
+
+**Awards:**
+🏆 1st Place - Imperial College Data Science Bootcamp (350 participants)
+🎤 1st Place - Toastmasters Public Speaking Competition
+⭐ Lead ML Engineer Recognition - Omdena`
+    },
+    education: {
+      keywords: ['education', 'degree', 'university', 'study', 'academic'],
+      response: `**Education:**
+🎓 M.Sc. Applied AI
+Cranfield University
+
+**Recognition:**
+• 1st Place at Imperial College Data Science Bootcamp (among 350 participants)
+
+**Continuous Learning:**
+• 8 industry certifications
+• 4 Udacity Nanodegrees in AI/ML
+• Active in AI research and development`
+    },
+    genai: {
+      keywords: ['generative ai', 'genai', 'llm', 'gpt', 'chatbot', 'rag', 'langchain'],
+      response: `Saurabh is a **Generative AI Specialist** with deep expertise in:
+
+🤖 **Agentic AI & Multi-Agent Systems:**
+• Built multi-agent platforms with LangGraph
+• Expert in autonomous agent orchestration
+
+🔗 **RAG (Retrieval Augmented Generation):**
+• Production RAG systems deployed
+• Improved accuracy from 64% to 89%
+• Hybrid semantic + BM25 search
+
+⚡ **LLM Frameworks:**
+• LangChain & LangGraph (Expert)
+• Llama-Index (Advanced)
+• Azure OpenAI & GPT-4 integration
+
+📚 **Certifications:**
+• Agentic AI Nanodegree (Udacity)
+• Generative AI Nanodegree (Udacity)
+• Agents with LangChain & LangGraph (Udacity)`
+    }
+  };
+
+  // Toggle chatbot
+  function toggleChatbot() {
+    chatbotWindow.classList.toggle('active');
+    chatbotToggle.classList.toggle('active');
+
+    if (chatbotWindow.classList.contains('active')) {
+      chatbotInput.focus();
+    }
+  }
+
+  chatbotToggle.addEventListener('click', toggleChatbot);
+  chatbotClose.addEventListener('click', toggleChatbot);
+
+  // Add message to chat
+  function addMessage(text, isUser = false) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
+
+    const avatar = document.createElement('div');
+    avatar.className = 'message-avatar';
+    avatar.innerHTML = isUser ? '<i class="fas fa-user"></i>' : '<i class="fas fa-robot"></i>';
+
+    const content = document.createElement('div');
+    content.className = 'message-content';
+
+    // Convert markdown-style links and formatting
+    const formattedText = text
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+
+    content.innerHTML = `<p>${formattedText}</p>`;
+
+    messageDiv.appendChild(avatar);
+    messageDiv.appendChild(content);
+    chatbotMessages.appendChild(messageDiv);
+
+    // Scroll to bottom
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+  }
+
+  // Show typing indicator
+  function showTypingIndicator() {
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'message bot-message';
+    typingDiv.id = 'typing-indicator';
+
+    const avatar = document.createElement('div');
+    avatar.className = 'message-avatar';
+    avatar.innerHTML = '<i class="fas fa-robot"></i>';
+
+    const indicator = document.createElement('div');
+    indicator.className = 'typing-indicator';
+    indicator.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
+
+    typingDiv.appendChild(avatar);
+    typingDiv.appendChild(indicator);
+    chatbotMessages.appendChild(typingDiv);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+  }
+
+  function removeTypingIndicator() {
+    const indicator = document.getElementById('typing-indicator');
+    if (indicator) {
+      indicator.remove();
+    }
+  }
+
+  // Get bot response
+  function getBotResponse(userMessage) {
+    const lowerMessage = userMessage.toLowerCase();
+
+    // Check for greetings
+    if (/^(hi|hello|hey|greetings|good morning|good afternoon)/.test(lowerMessage)) {
+      return "Hello! 👋 I'm Saurabh's AI assistant. I can help you learn about his skills, projects, experience, and more. What would you like to know?";
+    }
+
+    // Check for thanks
+    if (/thank|thanks|appreciate/.test(lowerMessage)) {
+      return "You're welcome! Feel free to ask me anything else about Saurabh's expertise and experience. 😊";
+    }
+
+    // Check knowledge base
+    for (const [category, data] of Object.entries(knowledgeBase)) {
+      if (data.keywords.some(keyword => lowerMessage.includes(keyword))) {
+        return data.response;
+      }
+    }
+
+    // Check for specific technologies
+    if (/azure|aws|cloud/.test(lowerMessage)) {
+      return "Saurabh is an **Azure & AWS Expert**!\n\n• Azure AI Engineer Associate certified\n• Expert in Azure ML, Azure OpenAI\n• AWS SageMaker experience\n• MLOps with Terraform, Docker, Kubernetes\n\nHe's deployed production systems on both platforms serving 10,000+ users daily.";
+    }
+
+    if (/mlops|devops|deployment/.test(lowerMessage)) {
+      return "Saurabh is a **MLOps Expert** with:\n\n• Terraform CI/CD pipelines\n• Docker & Kubernetes orchestration\n• MLflow for experiment tracking\n• Azure DevOps certified\n• Reduced deployment time from weeks to hours\n\nHe built Delaware's Agentic AI Deployment Framework!";
+    }
+
+    if (/hire|hiring|available|job/.test(lowerMessage)) {
+      return "Saurabh is currently **available for new opportunities**!\n\nHe's open to:\n• AI Consulting\n• Speaking Engagements\n• Project Collaboration\n• Full-time positions\n\nReach out via:\n📧 aryan.saurabhbhardwaj@gmail.com\n💼 [LinkedIn](https://www.linkedin.com/in/saurabhbhardwajofficial/)";
+    }
+
+    // Default response
+    return `I can help you learn about:
+• **Skills & Expertise** - AI/ML technologies, cloud platforms
+• **Projects** - RAG systems, multi-agent platforms
+• **Experience** - 9+ years in AI/ML, team leadership
+• **Certifications** - 8 industry certifications
+• **Contact** - How to reach Saurabh
+
+What would you like to know more about?`;
+  }
+
+  // Handle sending message
+  function sendMessage() {
+    const message = chatbotInput.value.trim();
+
+    if (!message) return;
+
+    // Add user message
+    addMessage(message, true);
+    chatbotInput.value = '';
+
+    // Show typing indicator
+    showTypingIndicator();
+
+    // Simulate bot response delay
+    setTimeout(() => {
+      removeTypingIndicator();
+      const response = getBotResponse(message);
+      addMessage(response, false);
+    }, 800 + Math.random() * 600); // Random delay between 800-1400ms
+  }
+
+  // Send button click
+  chatbotSend.addEventListener('click', sendMessage);
+
+  // Enter key to send
+  chatbotInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      sendMessage();
+    }
+  });
+
+  // Quick option buttons
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('quick-option')) {
+      const query = e.target.dataset.query;
+      chatbotInput.value = query;
+      sendMessage();
+    }
+  });
+}

@@ -1326,6 +1326,65 @@
     </button>
   </footer>
 
+  <!-- Chatbot Widget -->
+  <div id="chatbot-container">
+    <!-- Chatbot Button -->
+    <button id="chatbot-toggle" class="chatbot-toggle" aria-label="Open chatbot">
+      <i class="fas fa-comment-dots"></i>
+      <span class="chatbot-badge">Ask me!</span>
+    </button>
+
+    <!-- Chatbot Window -->
+    <div id="chatbot-window" class="chatbot-window">
+      <div class="chatbot-header">
+        <div class="chatbot-header-content">
+          <div class="chatbot-avatar">
+            <i class="fas fa-robot"></i>
+          </div>
+          <div class="chatbot-title">
+            <h4>AI Assistant</h4>
+            <p class="chatbot-status">
+              <span class="status-dot"></span> Online
+            </p>
+          </div>
+        </div>
+        <button id="chatbot-close" class="chatbot-close-btn" aria-label="Close chatbot">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="chatbot-messages" id="chatbot-messages">
+        <div class="message bot-message">
+          <div class="message-avatar">
+            <i class="fas fa-robot"></i>
+          </div>
+          <div class="message-content">
+            <p>Hi! I'm Saurabh's AI assistant. I can help you learn about his:</p>
+            <div class="quick-options">
+              <button class="quick-option" data-query="skills">Skills & Expertise</button>
+              <button class="quick-option" data-query="projects">Projects</button>
+              <button class="quick-option" data-query="experience">Experience</button>
+              <button class="quick-option" data-query="contact">Contact Info</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chatbot-input-container">
+        <input
+          type="text"
+          id="chatbot-input"
+          class="chatbot-input"
+          placeholder="Ask me anything..."
+          autocomplete="off"
+        />
+        <button id="chatbot-send" class="chatbot-send-btn" aria-label="Send message">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
