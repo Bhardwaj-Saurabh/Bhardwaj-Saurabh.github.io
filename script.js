@@ -560,20 +560,25 @@ He has 9+ years of AI/ML experience and 8 industry certifications including Azur
       keywords: ['project', 'work', 'portfolio', 'built', 'developed', 'created'],
       response: `Here are Saurabh's featured projects:
 
-**1. AI Research Trends RAG**
-• Production-grade platform discovering AI research trends
-• Uses GPT-4 with RAG for citation-backed insights
-• Tech: OpenAI GPT-4, FastAPI, Qdrant, Streamlit
+**1. EPYHIA — One-Person AI Agency**
+• Four AI agents turn a business brief into a live website, marketing pack & Stripe checkout
+• All agent spend and publishing goes through one audited gateway
+• [Live demo](https://epyhia-gateway.fly.dev) · Tech: Multi-Agent, Python, React, Stripe
 
-**2. ConformAI - EU AI Regulations**
-• RAG system for EU AI regulations (AI Act, GDPR)
-• LangGraph orchestration with multi-turn conversations
-• Tech: LangGraph, Qdrant, Airflow, Kubernetes
+**2. ScholarMomentSearch**
+• One grounded answer citing the exact video moment, paper page & deck slide
+• 703/703 tests passing, entity-graph-boosted hybrid retrieval
+• [Live demo](https://scholarmomentsearch.fly.dev) · Tech: Qdrant, Prefect, Auth0
 
-**3. OmniSupply Multi-Agent Platform**
-• Supply chain intelligence with 5 specialized AI agents
-• Processes 416K+ records for analytics & predictions
-• Tech: LangGraph, GPT-4o, ChromaDB, PostgreSQL
+**3. Aurora — Voice Reservations Agent**
+• Real-time multilingual voice AI for hotel reservations (STT → LLM → RAG → TTS)
+• Real auth, persistence, observability & continuous live-model evals
+• [Live demo](https://aurora-hotel-talk-server.fly.dev) · Tech: LiveKit, GPT-4o, FastAPI
+
+**4. Multi-Agent Banking System**
+• Production-grade banking agents on Google's ADK & the A2A protocol
+• Manager routing, loan orchestrator with 6 sub-agents, strict data guardrails
+• Tech: Google ADK, Gemini 2.5, MCP Toolbox
 
 View all projects on his [GitHub](https://github.com/Bhardwaj-Saurabh)!`
     },

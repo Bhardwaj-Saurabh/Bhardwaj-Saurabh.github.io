@@ -308,127 +308,157 @@
 
     <div class="case-studies-grid" data-aos="fade-up" data-aos-delay="200">
       <!-- Case Study 1: Delaware -->
-      <div class="case-study-card solid-card" data-aos="fade-up">
-        <div class="case-study-header">
-          <img src="./assets/delaware logo.png" alt="Delaware Logo" class="company-logo" />
-          <div>
-            <h3 class="case-study-title">Scaling an Enterprise AI Practice</h3>
-            <p class="case-study-org">Delaware UK · Lead AI Architect</p>
-          </div>
+      <div class="project-card solid-card case-study-card" data-aos="flip-left">
+        <div class="project-image-wrapper case-image-wrapper">
+          <img src="./assets/delaware logo.png" alt="Delaware UK" class="case-logo-img" loading="lazy" />
         </div>
-        <div class="case-study-body">
-          <div class="case-study-block">
-            <h4><i class="fas fa-triangle-exclamation"></i> Challenge</h4>
-            <p>Enterprise clients wanted generative AI value but lacked the team, governance, and repeatable
-              delivery path to move beyond pilots—especially in regulated industries.</p>
+        <div class="project-content">
+          <div class="project-category-badge genai">Delaware UK · Lead AI Architect</div>
+          <h3 class="project-title">Scaling an Enterprise AI Practice</h3>
+          <p class="project-description">
+            Built a 19-member AI team across three countries and the Agentic AI Deployment Framework—a repeatable
+            pilot-to-production path with GDPR-compliant governance for regulated industries.
+          </p>
+
+          <div class="project-metrics">
+            <div class="metric-item">
+              <div class="metric-value">36</div>
+              <div class="metric-label">AI Use Cases</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">10K+</div>
+              <div class="metric-label">Daily Users</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">40%</div>
+              <div class="metric-label">Faster Delivery</div>
+            </div>
           </div>
-          <div class="case-study-block">
-            <h4><i class="fas fa-route"></i> Approach</h4>
-            <p>Built a 19-member AI team across three countries, created the Agentic AI Deployment Framework as a
-              standard pilot-to-production path, and established GDPR-compliant AI governance.</p>
+
+          <div class="case-study-toggle" onclick="this.closest('.case-study-card').classList.toggle('active')">
+            <span>Challenge → Approach → Outcome</span>
+            <i class="fas fa-chevron-down expand-icon"></i>
           </div>
-          <div class="case-study-block">
-            <h4><i class="fas fa-chart-line"></i> Business Outcome</h4>
-            <p>36 AI use cases architected with 3 production systems serving 10,000+ daily users, $1M+ in annual
-              business value, and 40% faster client delivery.</p>
-          </div>
-        </div>
-        <div class="impact-metrics case-study-metrics">
-          <div class="metric">
-            <div class="metric-value">36</div>
-            <div class="metric-label">AI Use Cases</div>
-          </div>
-          <div class="metric">
-            <div class="metric-value">10K+</div>
-            <div class="metric-label">Daily Users</div>
-          </div>
-          <div class="metric">
-            <div class="metric-value">40%</div>
-            <div class="metric-label">Faster Delivery</div>
+          <div class="case-study-details">
+            <div class="case-study-block">
+              <h4><i class="fas fa-triangle-exclamation"></i> Challenge</h4>
+              <p>Enterprise clients wanted generative AI value but lacked the team, governance, and repeatable
+                delivery path to move beyond pilots—especially in regulated industries.</p>
+            </div>
+            <div class="case-study-block">
+              <h4><i class="fas fa-route"></i> Approach</h4>
+              <p>Built a 19-member AI team across three countries, created the Agentic AI Deployment Framework as a
+                standard pilot-to-production path, and established GDPR-compliant AI governance.</p>
+            </div>
+            <div class="case-study-block">
+              <h4><i class="fas fa-chart-line"></i> Business Outcome</h4>
+              <p>36 AI use cases architected with 3 production systems serving 10,000+ daily users, $1M+ in annual
+                business value, and 40% faster client delivery.</p>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Case Study 2: Unisys -->
-      <div class="case-study-card solid-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="case-study-header">
-          <img src="./assets/unisys.png" alt="Unisys Logo" class="company-logo" />
-          <div>
-            <h3 class="case-study-title">RAG Document Intelligence for Legal Review</h3>
-            <p class="case-study-org">Unisys · Principal AI Engineer</p>
-          </div>
+      <div class="project-card solid-card case-study-card" data-aos="flip-left" data-aos-delay="100">
+        <div class="project-image-wrapper case-image-wrapper">
+          <img src="./assets/unisys.png" alt="Unisys" class="case-logo-img" loading="lazy" />
         </div>
-        <div class="case-study-body">
-          <div class="case-study-block">
-            <h4><i class="fas fa-triangle-exclamation"></i> Challenge</h4>
-            <p>Legal document review was slow, manual, and expensive—thousands of hours a year spent on reading
-              and cross-checking, with error-prone documentation downstream.</p>
+        <div class="project-content">
+          <div class="project-category-badge genai">Unisys · Principal AI Engineer</div>
+          <h3 class="project-title">RAG Document Intelligence for Legal Review</h3>
+          <p class="project-description">
+            Architected a RAG document intelligence system on Azure OpenAI—raising answer accuracy from 64% to
+            89%—with Terraform CI/CD cutting deployment from weeks to hours.
+          </p>
+
+          <div class="project-metrics">
+            <div class="metric-item">
+              <div class="metric-value">$500K</div>
+              <div class="metric-label">Annual Savings</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">60%</div>
+              <div class="metric-label">Review Time Cut</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">89%</div>
+              <div class="metric-label">Answer Accuracy</div>
+            </div>
           </div>
-          <div class="case-study-block">
-            <h4><i class="fas fa-route"></i> Approach</h4>
-            <p>Architected a RAG document intelligence system on Azure OpenAI—raising answer accuracy from 64% to
-              89%—and stood up MLOps infrastructure with Terraform CI/CD, cutting deployment from weeks to hours.</p>
+
+          <div class="case-study-toggle" onclick="this.closest('.case-study-card').classList.toggle('active')">
+            <span>Challenge → Approach → Outcome</span>
+            <i class="fas fa-chevron-down expand-icon"></i>
           </div>
-          <div class="case-study-block">
-            <h4><i class="fas fa-chart-line"></i> Business Outcome</h4>
-            <p>Legal review time down 60% for $500K in annual savings; automated quality control saved a further
-              500+ hours monthly and eliminated 93% of documentation errors.</p>
-          </div>
-        </div>
-        <div class="impact-metrics case-study-metrics">
-          <div class="metric">
-            <div class="metric-value">$500K</div>
-            <div class="metric-label">Annual Savings</div>
-          </div>
-          <div class="metric">
-            <div class="metric-value">60%</div>
-            <div class="metric-label">Review Time Cut</div>
-          </div>
-          <div class="metric">
-            <div class="metric-value">89%</div>
-            <div class="metric-label">Answer Accuracy</div>
+          <div class="case-study-details">
+            <div class="case-study-block">
+              <h4><i class="fas fa-triangle-exclamation"></i> Challenge</h4>
+              <p>Legal document review was slow, manual, and expensive—thousands of hours a year spent on reading
+                and cross-checking, with error-prone documentation downstream.</p>
+            </div>
+            <div class="case-study-block">
+              <h4><i class="fas fa-route"></i> Approach</h4>
+              <p>Architected a RAG document intelligence system on Azure OpenAI—raising answer accuracy from 64% to
+                89%—and stood up MLOps infrastructure with Terraform CI/CD.</p>
+            </div>
+            <div class="case-study-block">
+              <h4><i class="fas fa-chart-line"></i> Business Outcome</h4>
+              <p>Legal review time down 60% for $500K in annual savings; automated quality control saved a further
+                500+ hours monthly and eliminated 93% of documentation errors.</p>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Case Study 3: Nissan -->
-      <div class="case-study-card solid-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="case-study-header">
-          <img src="./assets/nissan.jpg" alt="Nissan Logo" class="company-logo" />
-          <div>
-            <h3 class="case-study-title">ML Price Prediction for Sourcing</h3>
-            <p class="case-study-org">Nissan Technical Centre Europe · Principal Consultant</p>
-          </div>
+      <div class="project-card solid-card case-study-card" data-aos="flip-left" data-aos-delay="200">
+        <div class="project-image-wrapper case-image-wrapper">
+          <img src="./assets/nissan.jpg" alt="Nissan Technical Centre Europe" class="case-logo-img" loading="lazy" />
         </div>
-        <div class="case-study-body">
-          <div class="case-study-block">
-            <h4><i class="fas fa-triangle-exclamation"></i> Challenge</h4>
-            <p>Accessory sourcing took 12 weeks, anchored on manual price estimation, and quality monitoring
-              consumed significant engineering time.</p>
+        <div class="project-content">
+          <div class="project-category-badge ml">Nissan · Principal Consultant</div>
+          <h3 class="project-title">ML Price Prediction for Sourcing</h3>
+          <p class="project-description">
+            Developed an end-to-end ML price prediction model on Azure with Power BI reporting, plus an automated
+            quality monitoring system alongside it.
+          </p>
+
+          <div class="project-metrics">
+            <div class="metric-item">
+              <div class="metric-value">92%</div>
+              <div class="metric-label">Model Accuracy</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">12→7</div>
+              <div class="metric-label">Weeks to Source</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">70%</div>
+              <div class="metric-label">QC Time Saved</div>
+            </div>
           </div>
-          <div class="case-study-block">
-            <h4><i class="fas fa-route"></i> Approach</h4>
-            <p>Developed an end-to-end ML price prediction model on Azure with Power BI reporting, and built an
-              automated quality monitoring system alongside it.</p>
+
+          <div class="case-study-toggle" onclick="this.closest('.case-study-card').classList.toggle('active')">
+            <span>Challenge → Approach → Outcome</span>
+            <i class="fas fa-chevron-down expand-icon"></i>
           </div>
-          <div class="case-study-block">
-            <h4><i class="fas fa-chart-line"></i> Business Outcome</h4>
-            <p>92% prediction accuracy cut sourcing time from 12 to 7 weeks; automated quality monitoring achieved
-              70% time savings.</p>
-          </div>
-        </div>
-        <div class="impact-metrics case-study-metrics">
-          <div class="metric">
-            <div class="metric-value">92%</div>
-            <div class="metric-label">Model Accuracy</div>
-          </div>
-          <div class="metric">
-            <div class="metric-value">12→7</div>
-            <div class="metric-label">Weeks to Source</div>
-          </div>
-          <div class="metric">
-            <div class="metric-value">70%</div>
-            <div class="metric-label">QC Time Saved</div>
+          <div class="case-study-details">
+            <div class="case-study-block">
+              <h4><i class="fas fa-triangle-exclamation"></i> Challenge</h4>
+              <p>Accessory sourcing took 12 weeks, anchored on manual price estimation, and quality monitoring
+                consumed significant engineering time.</p>
+            </div>
+            <div class="case-study-block">
+              <h4><i class="fas fa-route"></i> Approach</h4>
+              <p>Developed an end-to-end ML price prediction model on Azure with Power BI reporting, and built an
+                automated quality monitoring system alongside it.</p>
+            </div>
+            <div class="case-study-block">
+              <h4><i class="fas fa-chart-line"></i> Business Outcome</h4>
+              <p>92% prediction accuracy cut sourcing time from 12 to 7 weeks; automated quality monitoring achieved
+                70% time savings.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -442,67 +472,239 @@
       I lead from technical credibility — open-source AI systems I've built myself
     </p>
 
-    <div class="builds-grid" data-aos="fade-up" data-aos-delay="200">
-      <!-- Build 1: AI Research Trends RAG -->
-      <div class="build-card solid-card" data-aos="fade-up">
-        <div class="build-header">
-          <h3 class="build-title">AI Research Trends RAG</h3>
-          <a href="https://github.com/Bhardwaj-Saurabh/ai-research-trends-rag" target="_blank" rel="noopener"
-            class="build-link" aria-label="AI Research Trends RAG on GitHub">
-            <i class="fab fa-github"></i>
-          </a>
+    <div class="projects-grid" data-aos="fade-up" data-aos-delay="200">
+      <!-- Project 1: EPYHIA AI Agency -->
+      <div class="project-card solid-card" data-aos="flip-left">
+        <div class="project-image-wrapper">
+          <img src="./assets/proj_epyhia.jpg" alt="EPYHIA AI Agency" class="project-img" loading="lazy" />
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="https://github.com/Bhardwaj-Saurabh/EPYHIA_AI_agency" target="_blank" rel="noopener"
+                class="project-link-btn">
+                <i class="fab fa-github"></i> Code
+              </a>
+              <a href="https://epyhia-gateway.fly.dev" target="_blank" rel="noopener" class="project-link-btn">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            </div>
+          </div>
         </div>
-        <p class="build-description">
-          Platform for discovering AI research trends using RAG. Ingests papers from arXiv and Semantic Scholar
-          to answer queries with citation-backed insights.
-        </p>
-        <div class="project-tech-stack">
-          <span class="tech-badge">OpenAI GPT-4</span>
-          <span class="tech-badge">FastAPI</span>
-          <span class="tech-badge">Qdrant</span>
-          <span class="tech-badge">Docker</span>
+        <div class="project-content">
+          <div class="project-category-badge genai">Agentic AI</div>
+          <h3 class="project-title">EPYHIA — One-Person AI Agency</h3>
+          <p class="project-description">
+            A business brief goes in, a real business comes out: a live website, a grounded marketing pack with
+            launch video, and a working Stripe checkout—built by a crew of four AI agents that can spend money
+            and publish to the world, but only through one audited gateway.
+          </p>
+
+          <div class="project-metrics">
+            <div class="metric-item">
+              <div class="metric-value">4</div>
+              <div class="metric-label">AI Agents</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">100/100</div>
+              <div class="metric-label">Product Eval</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">Live</div>
+              <div class="metric-label">In Production</div>
+            </div>
+          </div>
+
+          <div class="project-tech-stack">
+            <span class="tech-badge">Multi-Agent</span>
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">React</span>
+            <span class="tech-badge">Stripe</span>
+            <span class="tech-badge">Fly.io</span>
+          </div>
+
+          <div class="project-features">
+            <h4>Key Features:</h4>
+            <ul>
+              <li><i class="fas fa-check"></i> Audited action gate for agent spend & publish</li>
+              <li><i class="fas fa-check"></i> Builds & deploys real sites with checkout</li>
+              <li><i class="fas fa-check"></i> Evidence-based product evaluation suite</li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <!-- Build 2: ConformAI -->
-      <div class="build-card solid-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="build-header">
-          <h3 class="build-title">ConformAI — EU AI Regulations</h3>
-          <a href="https://github.com/Bhardwaj-Saurabh/ConformAI" target="_blank" rel="noopener" class="build-link"
-            aria-label="ConformAI on GitHub">
-            <i class="fab fa-github"></i>
-          </a>
+      <!-- Project 2: ScholarMomentSearch -->
+      <div class="project-card solid-card" data-aos="flip-left" data-aos-delay="100">
+        <div class="project-image-wrapper">
+          <img src="./assets/proj_scholar.jpg" alt="ScholarMomentSearch" class="project-img" loading="lazy" />
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="https://github.com/Bhardwaj-Saurabh/ScholarMomentSearch" target="_blank" rel="noopener"
+                class="project-link-btn">
+                <i class="fab fa-github"></i> Code
+              </a>
+              <a href="https://scholarmomentsearch.fly.dev" target="_blank" rel="noopener" class="project-link-btn">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            </div>
+          </div>
         </div>
-        <p class="build-description">
-          RAG system answering questions on EU AI regulation—AI Act, GDPR, EDPB guidelines—with LangGraph
-          orchestration and multi-turn conversations. Pairs with my AI governance work.
-        </p>
-        <div class="project-tech-stack">
-          <span class="tech-badge">LangGraph</span>
-          <span class="tech-badge">Qdrant</span>
-          <span class="tech-badge">Airflow</span>
-          <span class="tech-badge">Kubernetes</span>
+        <div class="project-content">
+          <div class="project-category-badge genai">RAG / Search</div>
+          <h3 class="project-title">ScholarMomentSearch</h3>
+          <p class="project-description">
+            One searchable brain over an ML research corpus—ask a question and get one grounded answer citing
+            the exact video moment, paper page, and deck slide it came from, with a citation guard that withholds
+            answers it can't ground.
+          </p>
+
+          <div class="project-metrics">
+            <div class="metric-item">
+              <div class="metric-value">703/703</div>
+              <div class="metric-label">Tests Passing</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">53</div>
+              <div class="metric-label">Scoped Components</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">3</div>
+              <div class="metric-label">Source Types</div>
+            </div>
+          </div>
+
+          <div class="project-tech-stack">
+            <span class="tech-badge">Qdrant</span>
+            <span class="tech-badge">Hybrid RAG</span>
+            <span class="tech-badge">Prefect</span>
+            <span class="tech-badge">Auth0</span>
+            <span class="tech-badge">Opik</span>
+          </div>
+
+          <div class="project-features">
+            <h4>Key Features:</h4>
+            <ul>
+              <li><i class="fas fa-check"></i> Deep-link citations: timestamp, page, slide</li>
+              <li><i class="fas fa-check"></i> Entity-graph-boosted hybrid retrieval</li>
+              <li><i class="fas fa-check"></i> Crash-resumable async ingestion queue</li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <!-- Build 3: OmniSupply Multi-Agent -->
-      <div class="build-card solid-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="build-header">
-          <h3 class="build-title">OmniSupply Multi-Agent Platform</h3>
-          <a href="https://github.com/Bhardwaj-Saurabh/OmniSupply-AI-Multi-Agent-Supply-Chain-Intelligence-Platform"
-            target="_blank" rel="noopener" class="build-link" aria-label="OmniSupply on GitHub">
-            <i class="fab fa-github"></i>
-          </a>
+      <!-- Project 3: Aurora Voice Agent -->
+      <div class="project-card solid-card" data-aos="flip-left" data-aos-delay="200">
+        <div class="project-image-wrapper">
+          <img src="./assets/proj_aurora.jpg" alt="Aurora Voice Reservations Agent" class="project-img"
+            loading="lazy" />
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="https://github.com/Bhardwaj-Saurabh/aurora_hotel_concierge_voice_based_agent" target="_blank"
+                rel="noopener" class="project-link-btn">
+                <i class="fab fa-github"></i> Code
+              </a>
+              <a href="https://aurora-hotel-talk-server.fly.dev" target="_blank" rel="noopener"
+                class="project-link-btn">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            </div>
+          </div>
         </div>
-        <p class="build-description">
-          Supply chain intelligence with 5 specialized AI agents—risk predictions, 90-day forecasts, and automated
-          reporting over 416K+ records.
-        </p>
-        <div class="project-tech-stack">
-          <span class="tech-badge">LangGraph</span>
-          <span class="tech-badge">GPT-4o</span>
-          <span class="tech-badge">ChromaDB</span>
-          <span class="tech-badge">Prophet</span>
+        <div class="project-content">
+          <div class="project-category-badge genai">Voice AI</div>
+          <h3 class="project-title">Aurora — Voice Reservations Agent</h3>
+          <p class="project-description">
+            Real-time, multilingual voice AI agent for hotel reservations—cascade voice architecture
+            (STT → LLM → RAG/Tools → TTS) hardened with real auth, persistence, and observability, continuously
+            evaluated against the live model in production.
+          </p>
+
+          <div class="project-metrics">
+            <div class="metric-item">
+              <div class="metric-value">Real-time</div>
+              <div class="metric-label">Voice Calls</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">Multi</div>
+              <div class="metric-label">Lingual</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">Live</div>
+              <div class="metric-label">In Production</div>
+            </div>
+          </div>
+
+          <div class="project-tech-stack">
+            <span class="tech-badge">LiveKit</span>
+            <span class="tech-badge">GPT-4o / Whisper</span>
+            <span class="tech-badge">FastAPI</span>
+            <span class="tech-badge">PostgreSQL</span>
+            <span class="tech-badge">Opik</span>
+          </div>
+
+          <div class="project-features">
+            <h4>Key Features:</h4>
+            <ul>
+              <li><i class="fas fa-check"></i> Cascade STT → LLM → RAG/Tools → TTS pipeline</li>
+              <li><i class="fas fa-check"></i> Real auth, persistence & observability</li>
+              <li><i class="fas fa-check"></i> Continuous evals against the live model</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: Multi-Agent Banking System -->
+      <div class="project-card solid-card" data-aos="flip-left" data-aos-delay="300">
+        <div class="project-image-wrapper">
+          <img src="./assets/proj_banking.jpg" alt="Multi-Agent Banking System" class="project-img" loading="lazy" />
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="https://github.com/Bhardwaj-Saurabh/Multi-Agent-Banking-System" target="_blank" rel="noopener"
+                class="project-link-btn">
+                <i class="fab fa-github"></i> Code
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-category-badge genai">Agentic AI</div>
+          <h3 class="project-title">Multi-Agent Banking System</h3>
+          <p class="project-description">
+            Production-grade multi-agent AI system for banking operations, built on Google's Agent Development Kit
+            and the Agent-to-Agent protocol—agent orchestration, secure inter-agent communication, and strict
+            guardrails for financial data.
+          </p>
+
+          <div class="project-metrics">
+            <div class="metric-item">
+              <div class="metric-value">8+</div>
+              <div class="metric-label">AI Agents</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">A2A</div>
+              <div class="metric-label">Protocol</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">100%</div>
+              <div class="metric-label">Auditable</div>
+            </div>
+          </div>
+
+          <div class="project-tech-stack">
+            <span class="tech-badge">Google ADK</span>
+            <span class="tech-badge">Gemini 2.5</span>
+            <span class="tech-badge">A2A</span>
+            <span class="tech-badge">MCP Toolbox</span>
+            <span class="tech-badge">Cloud SQL</span>
+          </div>
+
+          <div class="project-features">
+            <h4>Key Features:</h4>
+            <ul>
+              <li><i class="fas fa-check"></i> Manager agent routing to specialist agents</li>
+              <li><i class="fas fa-check"></i> Loan orchestrator with 6 sub-agents</li>
+              <li><i class="fas fa-check"></i> Guardrails protecting sensitive financial data</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

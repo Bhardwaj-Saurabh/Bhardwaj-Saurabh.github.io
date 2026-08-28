@@ -1317,10 +1317,10 @@ section {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 2rem;
-  max-width: 1400px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -2401,38 +2401,82 @@ footer {
 
 /* ================================
    ENTERPRISE CASE STUDIES SECTION
+   Reuses the project-card look with the Professional Journey
+   expand/collapse interaction.
    ================================ */
 
 .case-studies-grid {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
+  margin-top: 2rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.case-study-header {
+.case-image-wrapper {
+  height: 160px;
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  margin-bottom: 1.75rem;
+  justify-content: center;
+  background: var(--bg-tertiary);
 }
 
-.case-study-title {
-  font-size: 1.4rem;
-  color: var(--text-primary);
-  margin-bottom: 0.25rem;
+.case-logo-img {
+  max-height: 90px;
+  max-width: 55%;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  transition: transform var(--transition-slow);
 }
 
-.case-study-org {
+.case-study-card:hover .case-logo-img {
+  transform: scale(1.08);
+}
+
+.case-study-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  margin-top: 1.25rem;
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  border-radius: var(--radius-md);
+  background: var(--bg-tertiary);
+  color: var(--purple-light);
   font-size: 0.9rem;
-  color: var(--text-muted);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
 }
 
-.case-study-body {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-bottom: 1.75rem;
+.case-study-toggle:hover {
+  border-color: var(--purple-primary);
+  box-shadow: var(--shadow-glow);
+}
+
+.case-study-toggle .expand-icon {
+  color: var(--purple-light);
+}
+
+.case-study-card.active .expand-icon {
+  transform: rotate(180deg);
+}
+
+.case-study-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.case-study-card.active .case-study-details {
+  max-height: 1200px;
+}
+
+.case-study-block {
+  margin-top: 1.25rem;
 }
 
 .case-study-block h4 {
@@ -2452,74 +2496,17 @@ footer {
   color: var(--text-secondary);
 }
 
-.case-study-metrics {
-  margin-bottom: 0;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(168, 85, 247, 0.15);
-}
-
-@media (max-width: 768px) {
-  .case-study-body {
-    grid-template-columns: 1fr;
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .case-studies-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 }
 
-/* ================================
-   HANDS-ON BUILDS SECTION
-   ================================ */
-
-.builds-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto 3rem;
-}
-
-.build-card {
-  display: flex;
-  flex-direction: column;
-}
-
-.build-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.build-title {
-  font-size: 1.2rem;
-  color: var(--text-primary);
-}
-
-.build-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  flex-shrink: 0;
-  border-radius: var(--radius-full);
-  background: var(--bg-tertiary);
-  color: var(--text-primary);
-  font-size: 1.3rem;
-  transition: all var(--transition-normal);
-}
-
-.build-link:hover {
-  background: var(--primary-gradient);
-  color: var(--text-white);
-  transform: translateY(-2px);
-}
-
-.build-description {
-  flex: 1;
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: var(--text-secondary);
-  margin-bottom: 1.25rem;
+@media (max-width: 768px) {
+  .case-studies-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ================================
