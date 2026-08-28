@@ -554,7 +554,7 @@ function initChatbot() {
 • SQL/NoSQL, PySpark
 • C++/C#
 
-He has 9+ years of AI/ML experience and 8 industry certifications including Azure AI Engineer and multiple Udacity Nanodegrees.`
+He has 9+ years of AI/ML experience and 12 industry certifications including Microsoft AI Transformation Leader, Claude Certified Architect (Anthropic), and Azure AI Engineer.`
     },
     projects: {
       keywords: ['project', 'work', 'portfolio', 'built', 'developed', 'created'],
@@ -640,12 +640,18 @@ He's currently available for AI consulting, speaking engagements, and collaborat
     },
     certifications: {
       keywords: ['certification', 'certified', 'credential', 'award', 'recognition'],
-      response: `**Microsoft Azure Certifications:**
+      response: `**Microsoft Certifications:**
+• AI Transformation Leader
+• Agentic AI Business Solutions Architect
 • Azure AI Engineer Associate (AI-102)
 • Azure Fabric Analytics Engineer (DP-600)
 • Azure Data Scientist Associate (DP-100)
 
+**Anthropic:**
+• Claude Certified Architect — Professional
+
 **Udacity Nanodegrees:**
+• AWS Future Agentic AI Engineer
 • Agents with LangChain & LangGraph
 • Agentic AI Nanodegree
 • Generative AI Nanodegree
@@ -666,8 +672,8 @@ Cranfield University
 • 1st Place at Imperial College Data Science Bootcamp (among 350 participants)
 
 **Continuous Learning:**
-• 8 industry certifications
-• 4 Udacity Nanodegrees in AI/ML
+• 12 industry certifications
+• 5 Udacity Nanodegrees in AI/ML
 • Active in AI research and development`
     },
     genai: {
@@ -802,7 +808,7 @@ Cranfield University
 • **Experience** - Lead AI Architect, 9+ years in AI/ML
 • **Skills & Expertise** - AI/ML technologies, cloud platforms
 • **Projects** - RAG systems, multi-agent platforms
-• **Certifications** - 8 industry certifications
+• **Certifications** - 12 industry certifications
 • **Contact** - How to reach Saurabh
 
 What would you like to know more about?`;

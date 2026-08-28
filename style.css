@@ -1229,6 +1229,14 @@ section {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
+.claude-badge {
+  background: linear-gradient(135deg, #cc785c 0%, #d4a27f 100%);
+}
+
+.aws-badge {
+  background: linear-gradient(135deg, #ff9900 0%, #ffb84d 100%);
+}
+
 .cert-card h3 {
   color: var(--text-primary);
   margin-bottom: 0.75rem;
