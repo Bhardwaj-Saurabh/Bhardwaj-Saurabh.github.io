@@ -223,30 +223,6 @@ nav.scrolled {
   cursor: default;
 }
 
-/* Dark Mode Toggle Button */
-.theme-toggle {
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-full);
-  width: 45px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all var(--transition-normal);
-  color: var(--text-primary);
-  font-size: 1.2rem;
-}
-
-.theme-toggle:hover {
-  background: var(--primary-gradient);
-  color: var(--text-white);
-  box-shadow: var(--shadow-glow);
-  transform: rotate(20deg);
-}
-
 /* ================================
    HAMBURGER MENU
    ================================ */
@@ -306,7 +282,7 @@ nav.scrolled {
 }
 
 .menu-links.open {
-  max-height: 350px;
+  max-height: 500px;
 }
 
 .hamburger-icon.open span:first-child {
@@ -2413,4 +2389,201 @@ footer {
   .message-content {
     max-width: 80%;
   }
+}
+
+/* ================================
+   LEADERSHIP & STRATEGY SECTION
+   ================================ */
+
+.leadership-grid .impact-value {
+  font-size: 1.35rem;
+}
+
+/* ================================
+   ENTERPRISE CASE STUDIES SECTION
+   ================================ */
+
+.case-studies-grid {
+  display: grid;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.case-study-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.case-study-title {
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.case-study-org {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.case-study-body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.case-study-block h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--purple-light);
+  margin-bottom: 0.6rem;
+}
+
+.case-study-block p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.case-study-metrics {
+  margin-bottom: 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(168, 85, 247, 0.15);
+}
+
+@media (max-width: 768px) {
+  .case-study-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================================
+   HANDS-ON BUILDS SECTION
+   ================================ */
+
+.builds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+}
+
+.build-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.build-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.build-title {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+.build-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  font-size: 1.3rem;
+  transition: all var(--transition-normal);
+}
+
+.build-link:hover {
+  background: var(--primary-gradient);
+  color: var(--text-white);
+  transform: translateY(-2px);
+}
+
+.build-description {
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+/* ================================
+   SPEAKING & WRITING SECTION
+   ================================ */
+
+.speaking-intro {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.speaking-intro p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-secondary);
+  margin-bottom: 1.75rem;
+}
+
+.speaking-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+}
+
+.speaking-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.speaking-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  background: var(--bg-tertiary);
+  color: var(--purple-light);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 1rem;
+}
+
+.speaking-title {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.speaking-venue {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.9rem;
+}
+
+.speaking-summary {
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
 }

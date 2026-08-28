@@ -7,9 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // initParticles(); // Removed for executive-level simplicity
   // initTypingEffect(); // Removed for executive-level simplicity
   initScrollAnimations();
-  initDarkModeToggle();
   initSkillFilters();
-  initProjectFilters();
   initContactForm();
   initSmoothScroll();
   initBackToTop();
@@ -153,44 +151,6 @@ function initScrollAnimations() {
 }
 
 /* ================================
-   DARK MODE TOGGLE
-   ================================ */
-
-function initDarkModeToggle() {
-  const themeToggle = document.getElementById('theme-toggle');
-
-  if (!themeToggle) return;
-
-  // Check for saved theme preference or default to light
-  const savedTheme = localStorage.getItem('theme') || 'light';
-  setTheme(savedTheme);
-
-  // Listen for toggle clicks
-  themeToggle.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-  });
-}
-
-function setTheme(theme) {
-  document.documentElement.setAttribute('data-theme', theme);
-  localStorage.setItem('theme', theme);
-
-  // Update icon
-  const themeToggle = document.getElementById('theme-toggle');
-  if (themeToggle) {
-    const icon = themeToggle.querySelector('i');
-    if (icon) {
-      icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-    }
-  }
-
-  // Add transition effect
-  document.body.style.transition = 'background 0.5s ease, color 0.5s ease';
-}
-
-/* ================================
    SKILL FILTERS
    ================================ */
 
@@ -210,46 +170,6 @@ function initSkillFilters() {
 
       // Filter skills with smooth animation
       skillCards.forEach(card => {
-        const category = card.dataset.category;
-
-        if (filterValue === 'all' || category === filterValue) {
-          card.style.display = 'block';
-          setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'scale(1)';
-          }, 10);
-        } else {
-          card.style.opacity = '0';
-          card.style.transform = 'scale(0.8)';
-          setTimeout(() => {
-            card.style.display = 'none';
-          }, 300);
-        }
-      });
-    });
-  });
-}
-
-/* ================================
-   PROJECT FILTERS
-   ================================ */
-
-function initProjectFilters() {
-  const filterBtns = document.querySelectorAll('.project-filters .filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
-
-  if (filterBtns.length === 0 || projectCards.length === 0) return;
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const filterValue = e.target.dataset.filter;
-
-      // Update active button
-      filterBtns.forEach(b => b.classList.remove('active'));
-      e.target.classList.add('active');
-
-      // Filter projects with smooth animation
-      projectCards.forEach(card => {
         const category = card.dataset.category;
 
         if (filterValue === 'all' || category === filterValue) {
@@ -316,18 +236,26 @@ function initContactForm() {
     submitBtn.disabled = true;
 
     try {
-      // Simulate form submission (replace with actual API call)
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Send via FormSubmit.co (requires one-time email activation on first submission)
+      const response = await fetch('https://formsubmit.co/ajax/aryan.saurabhbhardwaj@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          ...data,
+          _subject: `Portfolio contact: ${data.subject || 'General inquiry'}`
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`Form submission failed with status ${response.status}`);
+      }
 
       // Show success message
       form.style.display = 'none';
       successMessage.classList.remove('hidden');
-
-      // Log data (remove in production)
-      console.log('Form submitted:', data);
-
-      // Optional: Send email using FormSubmit.co or EmailJS
-      // Example: https://formsubmit.co/your-email@example.com
 
     } catch (error) {
       console.error('Form submission error:', error);
@@ -559,17 +487,12 @@ document.querySelectorAll('.skill-card').forEach(card => {
   card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
 });
 
-// Add smooth transitions for project card filtering
-document.querySelectorAll('.project-card').forEach(card => {
-  card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-});
-
 /* ================================
    CONSOLE MESSAGE
    ================================ */
 
 console.log('%c🚀 Portfolio by Saurabh Bhardwaj', 'color: #667eea; font-size: 20px; font-weight: bold;');
-console.log('%cLead AI Architect | ML Specialist | AI Innovation Leader', 'color: #764ba2; font-size: 14px;');
+console.log('%cAI Leader | Lead AI Architect | Building Enterprise AI Teams & Strategy', 'color: #764ba2; font-size: 14px;');
 console.log('%cWebsite built with passion using HTML, CSS & JavaScript', 'color: #4a4a6a; font-size: 12px;');
 
 /* ================================
@@ -588,6 +511,28 @@ function initChatbot() {
 
   // Knowledge base - Portfolio information
   const knowledgeBase = {
+    leadership: {
+      keywords: ['leadership', 'leader', 'lead', 'team', 'manage', 'management', 'head of ai', 'strategy', 'governance', 'responsible ai'],
+      response: `Saurabh is an **AI leader** who builds AI organizations that deliver:
+
+👥 **Team Building**
+• Grew an AI practice from 0 to 19 people across UK, Belgium & Netherlands
+• Hiring, mentoring, and career development for engineers and architects
+
+🎯 **AI Strategy & Roadmap**
+• 36 AI use cases architected and prioritized by business value and risk
+• 3 mission-critical systems in production serving 10,000+ users daily
+
+⚖️ **Governance & Responsible AI**
+• GDPR-compliant AI governance framework for regulated industries
+• Working knowledge of the EU AI Act and ethical AI deployment
+
+🚀 **Delivery Frameworks**
+• Built Delaware's Agentic AI Deployment Framework — 40% faster client delivery
+
+💰 **Business Impact**
+• $2M+ in cumulative business value delivered across his career`
+    },
     skills: {
       keywords: ['skill', 'technology', 'tech', 'expertise', 'tools', 'framework', 'language', 'programming'],
       response: `Saurabh is an expert in:
@@ -670,10 +615,11 @@ He's currently available for AI consulting, speaking engagements, and collaborat
       keywords: ['impact', 'achievement', 'result', 'outcome', 'success', 'delivered'],
       response: `**Executive Impact Highlights:**
 
-💰 **$2M+ Cost Reduction**
+💰 **$2M+ Cumulative Business Value**
 • 60% reduction in legal document review time
 • 500+ hours saved monthly in quality control
 • 60% cut in equipment downtime
+• $1M+ annual value delivered at Delaware UK
 
 👥 **Team Leadership**
 • Built and lead 19-member AI team from scratch
@@ -847,9 +793,10 @@ Cranfield University
 
     // Default response
     return `I can help you learn about:
+• **Leadership** - AI strategy, team building, governance
+• **Experience** - Lead AI Architect, 9+ years in AI/ML
 • **Skills & Expertise** - AI/ML technologies, cloud platforms
 • **Projects** - RAG systems, multi-agent platforms
-• **Experience** - 9+ years in AI/ML, team leadership
 • **Certifications** - 8 industry certifications
 • **Contact** - How to reach Saurabh
 
