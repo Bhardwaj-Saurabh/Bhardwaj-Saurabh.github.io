@@ -506,6 +506,10 @@ console.log('%cWebsite built with passion using HTML, CSS & JavaScript', 'color:
    CHATBOT FUNCTIONALITY
    ================================ */
 
+// AI chat endpoint (Cloudflare Worker in worker/). Leave empty to use only the offline keyword answers.
+const CHAT_API_URL = 'https://portfolio-chat.bhardwaj-saurabh.workers.dev/chat';
+const CHAT_TIMEOUT_MS = 20000;
+
 function initChatbot() {
   const chatbotToggle = document.getElementById('chatbot-toggle');
   const chatbotClose = document.getElementById('chatbot-close');
@@ -762,7 +766,56 @@ Cranfield University
   chatbotToggle.addEventListener('click', toggleChatbot);
   chatbotClose.addEventListener('click', toggleChatbot);
 
-  // Add message to chat
+  // Conversation sent to the AI (the Worker keeps only the last few turns)
+  const history = [];
+  let isWaiting = false;
+
+  // Render a small, safe subset of Markdown: **bold**, "- " / "• " bullets, and links.
+  // All text is HTML-escaped first; links are only kept if they point at this site's sections,
+  // LinkedIn, GitHub, or Saurabh's email, so model output can never inject markup or scripts.
+  function escapeHtml(text) {
+    return text.replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+  }
+
+  function renderInline(text) {
+    return escapeHtml(text)
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (match, label, href) => {
+        if (/^#[a-z-]+$/.test(href)) {
+          return `<a href="${href}" class="chat-section-link">${label}</a>`;
+        }
+        if (/^https:\/\/(www\.)?(linkedin\.com|github\.com)\//.test(href) || /^mailto:aryan\.saurabhbhardwaj@gmail\.com$/.test(href)) {
+          return `<a href="${href}" target="_blank" rel="noopener">${label}</a>`;
+        }
+        return label;
+      });
+  }
+
+  function renderMarkdown(text) {
+    const html = [];
+    let listItems = [];
+    const flushList = () => {
+      if (listItems.length) {
+        html.push(`<ul>${listItems.map(item => `<li>${item}</li>`).join('')}</ul>`);
+        listItems = [];
+      }
+    };
+
+    for (const rawLine of text.split('\n')) {
+      const line = rawLine.trim();
+      const bullet = line.match(/^[-•*]\s+(.*)$/);
+      if (bullet) {
+        listItems.push(renderInline(bullet[1]));
+      } else {
+        flushList();
+        if (line) html.push(`<p>${renderInline(line)}</p>`);
+      }
+    }
+    flushList();
+    return html.join('');
+  }
+
+  // Add message to chat; returns the content element so streamed answers can update it
   function addMessage(text, isUser = false) {
     const messageDiv = document.createElement('div');
     messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
@@ -773,13 +826,7 @@ Cranfield University
 
     const content = document.createElement('div');
     content.className = 'message-content';
-
-    // Convert markdown-style links and formatting
-    const formattedText = text
-      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-      .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
-
-    content.innerHTML = `<p>${formattedText}</p>`;
+    content.innerHTML = isUser ? `<p>${escapeHtml(text)}</p>` : renderMarkdown(text);
 
     messageDiv.appendChild(avatar);
     messageDiv.appendChild(content);
@@ -787,6 +834,7 @@ Cranfield University
 
     // Scroll to bottom
     chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    return content;
   }
 
   // Show typing indicator
@@ -864,25 +912,74 @@ Cranfield University
 What would you like to know more about?`;
   }
 
+  // Stream an answer from the AI Worker into a new bot message. Returns the full answer,
+  // or null if the AI is unavailable (not configured, rate limited, offline, or timed out).
+  async function streamAiAnswer() {
+    if (!CHAT_API_URL) return null;
+
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), CHAT_TIMEOUT_MS);
+    try {
+      const response = await fetch(CHAT_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: history.slice(-6) }),
+        signal: controller.signal
+      });
+      if (!response.ok || !response.body) return null;
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let answer = '';
+      let content = null;
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        answer += decoder.decode(value, { stream: true });
+        if (!answer.trim()) continue;
+        if (!content) {
+          removeTypingIndicator();
+          content = addMessage(answer, false);
+        } else {
+          content.innerHTML = renderMarkdown(answer);
+          chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+      }
+      return answer.trim() || null;
+    } catch (error) {
+      console.warn('AI chat unavailable, using offline answers:', error);
+      return null;
+    } finally {
+      clearTimeout(timeout);
+    }
+  }
+
   // Handle sending message
-  function sendMessage() {
-    const message = chatbotInput.value.trim();
+  async function sendMessage() {
+    const message = chatbotInput.value.trim().slice(0, 500);
+    if (!message || isWaiting) return;
 
-    if (!message) return;
-
-    // Add user message
+    isWaiting = true;
+    chatbotSend.disabled = true;
     addMessage(message, true);
     chatbotInput.value = '';
-
-    // Show typing indicator
+    history.push({ role: 'user', content: message });
     showTypingIndicator();
 
-    // Simulate bot response delay
-    setTimeout(() => {
+    let answer = await streamAiAnswer();
+    if (!answer) {
+      // Offline fallback: the rule-based answers below
+      await new Promise(resolve => setTimeout(resolve, 600));
       removeTypingIndicator();
-      const response = getBotResponse(message);
-      addMessage(response, false);
-    }, 800 + Math.random() * 600); // Random delay between 800-1400ms
+      answer = getBotResponse(message);
+      addMessage(answer, false);
+    }
+    history.push({ role: 'assistant', content: answer.slice(0, 500) });
+
+    isWaiting = false;
+    chatbotSend.disabled = false;
+    chatbotInput.focus();
   }
 
   // Send button click
@@ -901,6 +998,13 @@ What would you like to know more about?`;
       const query = e.target.dataset.query;
       chatbotInput.value = query;
       sendMessage();
+    }
+  });
+
+  // Section links in answers: close the chat on small screens so the section is visible
+  chatbotMessages.addEventListener('click', (e) => {
+    if (e.target.closest('.chat-section-link') && window.innerWidth <= 768) {
+      toggleChatbot();
     }
   });
 }

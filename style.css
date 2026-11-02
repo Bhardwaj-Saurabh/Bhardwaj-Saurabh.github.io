@@ -2426,6 +2426,51 @@ footer {
   font-size: 0.95rem;
 }
 
+/* Formatted AI answers: paragraphs, bullet lists, and section links */
+.message-content p + p,
+.message-content p + ul,
+.message-content ul + p {
+  margin-top: 0.6rem;
+}
+
+.message-content ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.message-content li + li {
+  margin-top: 0.35rem;
+}
+
+.message-content strong {
+  color: var(--purple-light);
+}
+
+.message-content a {
+  color: var(--purple-light);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.chatbot-disclaimer {
+  margin: 0;
+  padding: 0 1rem 0.6rem;
+  background: var(--bg-secondary);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.chatbot-send-btn:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
 .user-message .message-content p {
   color: var(--text-white);
 }
@@ -2500,7 +2545,6 @@ footer {
   padding: 1rem;
   background: var(--bg-secondary);
   border-top: 1px solid var(--bg-tertiary);
-  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
 }
 
 .chatbot-input {

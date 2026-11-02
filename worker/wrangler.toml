@@ -1,0 +1,19 @@
+name = "portfolio-chat"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+# Secrets (not in this file): GROQ_API_KEY, set with `npx wrangler secret put GROQ_API_KEY`.
+# For local `wrangler dev`, put GROQ_API_KEY (and optional overrides) in worker/.dev.vars (gitignored).
+
+[vars]
+ALLOWED_ORIGINS = "https://bhardwaj-saurabh.github.io"
+KNOWLEDGE_URL = "https://bhardwaj-saurabh.github.io/portfolio-knowledge.md"
+
+# Per-visitor limit: 8 questions per minute per IP.
+[[ratelimits]]
+name = "CHAT_LIMITER"
+namespace_id = "1001"
+
+  [ratelimits.simple]
+  limit = 8
+  period = 60

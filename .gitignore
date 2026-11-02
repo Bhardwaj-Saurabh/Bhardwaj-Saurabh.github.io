@@ -1,0 +1,7 @@
+# Secrets: never commit API keys
+.env
+.dev.vars
+
+# Cloudflare Worker tooling
+node_modules/
+.wrangler/

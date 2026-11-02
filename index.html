@@ -1573,12 +1573,12 @@
             <i class="fas fa-robot"></i>
           </div>
           <div class="message-content">
-            <p>Hi! I'm Saurabh's AI assistant. I can help you learn about his:</p>
+            <p>Hi! I'm Saurabh's AI assistant. Ask me anything about his experience, leadership, or work.</p>
             <div class="quick-options">
-              <button class="quick-option" data-query="leadership">Leadership</button>
-              <button class="quick-option" data-query="experience">Experience</button>
-              <button class="quick-option" data-query="skills">Skills & Expertise</button>
-              <button class="quick-option" data-query="contact">Contact Info</button>
+              <button class="quick-option" data-query="Tell me about his leadership experience">Leadership experience</button>
+              <button class="quick-option" data-query="What is his current role?">Current role</button>
+              <button class="quick-option" data-query="What talks has he given and what does he teach?">Speaking &amp; teaching</button>
+              <button class="quick-option" data-query="How can I contact him?">Contact</button>
             </div>
           </div>
         </div>
@@ -1589,13 +1589,15 @@
           type="text"
           id="chatbot-input"
           class="chatbot-input"
-          placeholder="Ask me anything..."
+          placeholder="Ask about Saurabh's experience..."
           autocomplete="off"
+          maxlength="500"
         />
         <button id="chatbot-send" class="chatbot-send-btn" aria-label="Send message">
           <i class="fas fa-paper-plane"></i>
         </button>
       </div>
+      <p class="chatbot-disclaimer">AI answers based on this portfolio. Please verify important details.</p>
     </div>
   </div>
 
