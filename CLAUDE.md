@@ -20,10 +20,12 @@ then open http://localhost:8000. Opening `index.html` directly in a browser also
 
 Four source files, all at the repo root:
 
-- `index.html` — the entire single-page site: nav (desktop + hamburger), then sections `#profile`, `#executive-impact`, `#leadership`, `#projects` (Hands-On Builds), `#about`, `#experience`, `#skills` (Technical Foundation), `#testimonials`, `#speaking`, `#certifications`, `#contact`, plus the chatbot markup and a JSON-LD `Person` structured-data block at the bottom. The site is positioned for Head-of-AI-level roles: leadership/strategy content leads. (An Enterprise Case Studies section existed briefly in Aug 2026; the owner removed it as low-value — don't reintroduce it.)
+- `index.html` — the entire single-page site: nav (desktop + hamburger), then sections `#profile`, `#executive-impact`, `#experience`, `#leadership`, `#projects` (Hands-On Builds), `#about`, `#skills` (Technical Foundation), `#testimonials`, `#speaking`, `#certifications`, `#contact`, plus the chatbot markup and a JSON-LD `Person` structured-data block at the bottom. The site is positioned for Head-of-AI-level roles: leadership/strategy content leads, and Experience sits right after Executive Impact because recruiters scan the career timeline first. (An Enterprise Case Studies section existed briefly in Aug 2026; the owner removed it as low-value — don't reintroduce it.)
 - `style.css` — all styling. Design tokens (colors, gradients, shadows) are CSS variables in `:root` at the top; a dark charcoal + purple palette. Most responsive rules live here too.
-- `mediaqueries.css` — a small supplemental set of breakpoint overrides.
-- `script.js` — all behavior. Everything is wired from a single `DOMContentLoaded` handler that calls `init*` functions: AOS scroll animations, skill filter buttons, contact form, smooth scroll, back-to-top, navbar scroll state, and the chatbot. (Particles and typed.js init functions exist but are commented out.)
+- `mediaqueries.css` — a small supplemental set of breakpoint overrides. It is linked after `style.css`, so its rules win on equal specificity.
+- `script.js` — all behavior. Everything is wired from a single `DOMContentLoaded` handler that calls `init*` functions: AOS scroll animations, skill filter buttons, contact form, smooth scroll, back-to-top, navbar scroll state, scroll-progress indicator, and the chatbot. (Particles and typed.js init functions exist but are commented out.)
+
+`assets/` holds images and the CV. `github_profile_readme.md` is not part of the site: it appears to be the source for the owner's GitHub profile README. Its "AI Architect" positioning predates the 2026 repositioning, so it is stale.
 
 External libraries are loaded from CDNs in `index.html` (AOS, particles.js, typed.js, Font Awesome, Google Fonts) — nothing is vendored.
 
@@ -35,4 +37,5 @@ External libraries are loaded from CDNs in `index.html` (AOS, particles.js, type
 - **The site is dark-theme only by design** — the old theme toggle was removed; don't reintroduce it without building real `[data-theme="light"]` overrides.
 - **The Speaking & Writing section (`#speaking`) holds placeholder card templates in an HTML comment** — fill them in as real talks/articles exist; the `.speaking-card` styles are already in `style.css`.
 - **The CV button still serves `assets/Saurabh_Bhardwaj_HR.docx`** — pending replacement with a PDF the owner provides.
-- **Pre-existing mobile bug**: the About section (`.about-details-container`) overflows horizontally at narrow widths (~375px); this predates the 2026 repositioning.
+- **Responsive widths**: the page fits 360px phones with no horizontal scroll (as of Nov 2026). Use `min(Npx, 100%)` rather than fixed px widths in new grids and boxes so they don't reintroduce horizontal scroll.
+- **Visual checks**: headless Chrome won't render narrower than 500px, so a `--window-size=390,…` screenshot is really a cropped 500px page. To check phone widths, load the page inside an `<iframe width="390">` in a throwaway file. The page fades content in on scroll, so inject `[data-aos]{opacity:1!important;transform:none!important}` into that copy to see everything.

@@ -120,7 +120,7 @@ function initTypingEffect() {
   if (typeof Typed !== 'undefined') {
     const typed = new Typed('#typed-text', {
       strings: [
-        'Lead AI Architect',
+        'Forward Deployed AI Engineering Lead',
         'Machine Learning Expert',
         'Generative AI Specialist',
         'MLOps Engineer',
@@ -253,13 +253,20 @@ function initContactForm() {
         throw new Error(`Form submission failed with status ${response.status}`);
       }
 
+      // FormSubmit answers 200 even when it rejects a message (e.g. before the form is activated),
+      // reporting the failure as success: "false" in the body
+      const result = await response.json();
+      if (String(result.success) !== 'true') {
+        throw new Error(`FormSubmit rejected the message: ${result.message || 'unknown reason'}`);
+      }
+
       // Show success message
       form.style.display = 'none';
       successMessage.classList.remove('hidden');
 
     } catch (error) {
       console.error('Form submission error:', error);
-      alert('Sorry, there was an error sending your message. Please try again or email directly.');
+      alert('Sorry, your message could not be sent. Please email me directly at aryan.saurabhbhardwaj@gmail.com.');
     } finally {
       submitBtn.innerHTML = originalText;
       submitBtn.disabled = false;
@@ -492,7 +499,7 @@ document.querySelectorAll('.skill-card').forEach(card => {
    ================================ */
 
 console.log('%c🚀 Portfolio by Saurabh Bhardwaj', 'color: #667eea; font-size: 20px; font-weight: bold;');
-console.log('%cAI Leader | Lead AI Architect | Building Enterprise AI Teams & Strategy', 'color: #764ba2; font-size: 14px;');
+console.log('%cAI Leader | Forward Deployed AI Engineering Lead | Building Enterprise AI Teams & Strategy', 'color: #764ba2; font-size: 14px;');
 console.log('%cWebsite built with passion using HTML, CSS & JavaScript', 'color: #4a4a6a; font-size: 12px;');
 
 /* ================================
@@ -530,8 +537,40 @@ function initChatbot() {
 🚀 **Delivery Frameworks**
 • Built Delaware's Agentic AI Deployment Framework — 40% faster client delivery
 
+💼 **Program Ownership**
+• Owned a €5.6M agentic AI program automating Delaware's managed service end to end
+
+🧭 **Now**
+• Associate Vice President & Forward Deployed AI Engineering Lead at Coforge
+• Building a 20-person AI team by March 2027; leading AI delivery for a global bank's AI transformation
+
 💰 **Business Impact**
 • $2M+ in cumulative business value delivered across his career`
+    },
+    speaking: {
+      keywords: ['talk', 'speak', 'conference', 'wids', 'presentation', 'keynote'],
+      response: `Saurabh speaks on agentic AI and enterprise AI leadership:
+
+🎤 **Talks**
+• "Building Agents from First Principles" — Delaware AI Conference, Belgium
+• Women in Data Science (WiDS) California — online
+
+🏆 District-level 1st place public speaker (Toastmasters)
+
+He has been sharing knowledge on enterprise AI since 2014.`
+    },
+    teaching: {
+      keywords: ['mentor', 'teach', 'course', 'great learning', 'ucl', 'johns hopkins', 'massachusetts', 'instructor', 'educator'],
+      response: `Saurabh has been an **AI Mentor with Great Learning** since Oct 2025:
+
+🎓 **Courses Taught**
+• Agentic AI
+• AI Business Applications
+
+🏛️ **University Programs**
+Delivered on Great Learning programs with **MIT**, **UCL**, and **Johns Hopkins University**
+
+He mentors working professionals on building agentic AI systems and applying AI to real business problems.`
     },
     skills: {
       keywords: ['skill', 'technology', 'tech', 'expertise', 'tools', 'framework', 'language', 'programming'],
@@ -583,24 +622,30 @@ He has 9+ years of AI/ML experience and 12 industry certifications including Mic
 View all projects on his [GitHub](https://github.com/Bhardwaj-Saurabh)!`
     },
     experience: {
-      keywords: ['experience', 'work history', 'job', 'career', 'company', 'position'],
-      response: `**Current Role:**
-Lead AI Architect at Delaware UK (Sep 2025 - Present)
-• Leading 19-member AI team across UK, Belgium, Netherlands
-• Delivered 36 AI solutions generating $1M+ annual value
-• Built Agentic AI Deployment Framework
-• 3 production systems serving 10,000+ users daily
+      keywords: ['experience', 'work history', 'job', 'career', 'company', 'position', 'coforge', 'delaware', 'current role'],
+      response: `**Current Roles:**
+• Associate Vice President & Forward Deployed AI Engineering Lead at Coforge (Oct 2026 - Present)
+  - Building a 20-person team of AI leads, architects & engineers by March 2027
+  - Leading AI delivery on a global bank's AI transformation program, including an Agentic SDLC
+• AI Mentor at Great Learning (Oct 2025 - Present)
+  - Teaching Agentic AI and AI Business Applications on programs with MIT, UCL & Johns Hopkins
 
 **Previous Roles:**
+• Lead AI Architect at Delaware UK (Sep 2025 - Sep 2026)
+  - Owned a €5.6M agentic AI program automating the managed service from ticket to closure
+  - Led 19-member AI team across UK, Belgium, Netherlands
+  - Architected 36 AI use cases; 3 in production generating $1M+ annual value
+  - Built Agentic AI Deployment Framework
+
 • Principal AI Engineer at Unisys (Jul 2024 - Aug 2025)
   - Delivered RAG system reducing legal review time by 60%
   - Automated quality control saving 500+ hours monthly
 
-• Principal Consultant at Nissan (Feb 2018 - Jun 2024)
+• Principal Consultant at Nissan Technical Centre Europe (Apr 2011 - Jun 2024)
   - ML price prediction model with 92% accuracy
   - Reduced sourcing time from 12 to 7 weeks
 
-Total: 19+ years experience, 9+ years in AI/ML`
+Total: 15+ years experience, 9+ years in AI/ML`
     },
     contact: {
       keywords: ['contact', 'email', 'reach', 'connect', 'linkedin', 'github'],
@@ -614,11 +659,13 @@ Total: 19+ years experience, 9+ years in AI/ML`
 
 📍 **Location:** London, United Kingdom
 
-He's currently available for AI consulting, speaking engagements, and collaboration opportunities!`
+He's open to conversations on AI leadership, speaking, and advisory.`
     },
     impact: {
       keywords: ['impact', 'achievement', 'result', 'outcome', 'success', 'delivered'],
       response: `**Executive Impact Highlights:**
+
+💼 **€5.6M Agentic AI Program Owned** at Delaware UK
 
 💰 **$2M+ Cumulative Business Value**
 • 60% reduction in legal document review time
@@ -627,12 +674,13 @@ He's currently available for AI consulting, speaking engagements, and collaborat
 • $1M+ annual value delivered at Delaware UK
 
 👥 **Team Leadership**
-• Built and lead 19-member AI team from scratch
+• Built and led 19-member AI team from scratch at Delaware UK
 • Across UK, Belgium, and Netherlands
+• Now building a 20-person AI team at Coforge
 
 🚀 **Production Systems**
 • 3 mission-critical AI systems deployed
-• 10,000+ users daily with 99.9% uptime
+• 10,000+ users daily
 
 📊 **AI Strategy**
 • 36 AI use cases architected
@@ -799,13 +847,15 @@ Cranfield University
     }
 
     if (/hire|hiring|available|job/.test(lowerMessage)) {
-      return "Saurabh is currently **available for new opportunities**!\n\nHe's open to:\n• AI Consulting\n• Speaking Engagements\n• Project Collaboration\n• Full-time positions\n\nReach out via:\n📧 aryan.saurabhbhardwaj@gmail.com\n💼 [LinkedIn](https://www.linkedin.com/in/saurabhbhardwajofficial/)";
+      return "Saurabh is Associate Vice President & Forward Deployed AI Engineering Lead at Coforge, and is open to conversations on:\n\n• AI leadership & strategy\n• Speaking engagements\n• Advisory\n\nReach out via:\n📧 aryan.saurabhbhardwaj@gmail.com\n💼 [LinkedIn](https://www.linkedin.com/in/saurabhbhardwajofficial/)";
     }
 
     // Default response
     return `I can help you learn about:
 • **Leadership** - AI strategy, team building, governance
-• **Experience** - Lead AI Architect, 9+ years in AI/ML
+• **Experience** - AVP & Forward Deployed AI Engineering Lead at Coforge, 15+ years in industry
+• **Speaking** - Talks at the Delaware AI Conference and WiDS California
+• **Teaching** - AI Mentor with Great Learning (MIT, UCL, Johns Hopkins programs)
 • **Skills & Expertise** - AI/ML technologies, cloud platforms
 • **Projects** - RAG systems, multi-agent platforms
 • **Certifications** - 12 industry certifications
