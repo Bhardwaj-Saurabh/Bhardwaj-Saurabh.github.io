@@ -509,6 +509,7 @@ console.log('%cWebsite built with passion using HTML, CSS & JavaScript', 'color:
 // AI chat endpoint (Cloudflare Worker in worker/). Leave empty to use only the offline keyword answers.
 const CHAT_API_URL = 'https://portfolio-chat.bhardwaj-saurabh.workers.dev/chat';
 const CHAT_TIMEOUT_MS = 20000;
+const BOT_AVATAR = '<img src="./assets/chat-avatar.jpg" alt="Saurabh Bhardwaj" />';
 
 function initChatbot() {
   const chatbotToggle = document.getElementById('chatbot-toggle');
@@ -597,7 +598,7 @@ He mentors working professionals on building agentic AI systems and applying AI 
 • SQL/NoSQL, PySpark
 • C++/C#
 
-He has 9+ years of AI/ML experience and 12 industry certifications including Microsoft AI Transformation Leader, Claude Certified Architect (Anthropic), and Azure AI Engineer.`
+He has 13+ years of AI/ML experience and 12 industry certifications including Microsoft AI Transformation Leader, Claude Certified Architect (Anthropic), and Azure AI Engineer.`
     },
     projects: {
       keywords: ['project', 'work', 'portfolio', 'built', 'developed', 'created'],
@@ -649,7 +650,7 @@ View all projects on his [GitHub](https://github.com/Bhardwaj-Saurabh)!`
   - ML price prediction model with 92% accuracy
   - Reduced sourcing time from 12 to 7 weeks
 
-Total: 15+ years experience, 9+ years in AI/ML`
+Total: 15+ years experience, 13+ years in AI/ML`
     },
     contact: {
       keywords: ['contact', 'email', 'reach', 'connect', 'linkedin', 'github'],
@@ -822,7 +823,7 @@ Cranfield University
 
     const avatar = document.createElement('div');
     avatar.className = 'message-avatar';
-    avatar.innerHTML = isUser ? '<i class="fas fa-user"></i>' : '<i class="fas fa-robot"></i>';
+    avatar.innerHTML = isUser ? '<i class="fas fa-user"></i>' : BOT_AVATAR;
 
     const content = document.createElement('div');
     content.className = 'message-content';
@@ -845,7 +846,7 @@ Cranfield University
 
     const avatar = document.createElement('div');
     avatar.className = 'message-avatar';
-    avatar.innerHTML = '<i class="fas fa-robot"></i>';
+    avatar.innerHTML = BOT_AVATAR;
 
     const indicator = document.createElement('div');
     indicator.className = 'typing-indicator';
